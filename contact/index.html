@@ -6,138 +6,13 @@
   <title>Contact - Ahmd Saladin</title>
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/font/font.css">
-  <style>
-    .contact-hero {
-      position: relative;
-      height: 50vh;
-      width: 100%;
-      background: url('./assets/images/WORK2.png') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .contact-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 1;
-    }
-    .contact-hero-content {
-      position: relative;
-      z-index: 2;
-      color: #fff;
-      text-align: center;
-    }
-    .contact-section {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-    @media (max-width: 900px) {
-      .contact-section { grid-template-columns: 1fr; }
-    }
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-    .contact-info h1 {
-      margin-bottom: 12px;
-    }
-    .contact-info .contact-socials {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-    .contact-info .contact-socials a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: #f6f6f6;
-      color: #222;
-      font-size: 22px;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .contact-info .contact-socials a:hover {
-      background: #222;
-      color: #fff;
-    }
-    .contact-form {
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      padding: 32px 24px;
-      border: 1px solid #eee;
-    }
-    .contact-form h2 {
-      margin-bottom: 16px;
-    }
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .contact-form input, .contact-form textarea {
-      padding: 12px;
-      border-radius: 12px;
-      border: 1px solid #ccc;
-      font-size: 1em;
-      resize: vertical;
-    }
-    .contact-form button {
-      padding: 12px 24px;
-      border-radius: 12px;
-      background: #222;
-      color: #fff;
-      border: none;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .contact-form button:hover {
-      background: #444;
-    }
-    .faq-section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-    .faq-section h2 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .faq-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .faq-item {
-      margin-bottom: 32px;
-    }
-    .faq-item h3 {
-      font-size: 1.2em;
-      margin-bottom: 8px;
-      color: var(--primary-color, #222);
-    }
-    .faq-item p {
-      color: #555;
-    }
-  </style>
+  
 </head>
 <body id="top">
   <!-- HEADER -->
   <header class="header" data-header>
     <div class="container">
-      <a href="/" class="logo">
+      <a href="#" class="logo">
         <img src="./assets/images/Logo.png" width="40" height="40" alt="Ahmd home">
       </a>
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
@@ -145,7 +20,7 @@
       </button>
       <nav class="navbar" data-navbar>
         <div class="navbar-top">
-          <a href="/" class="logo">
+          <a href="#" class="logo">
             <p><img src="./assets/images/Logo3.png" width="140" height="40" alt="Ahmd home" class="img navbar-title">Ahmd</p>
           </a>
           <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
@@ -158,8 +33,9 @@
           <li class="navbar-item"><a href="/gallery" class="navbar-link" data-nav-link>Gallery</a></li>
           <li class="navbar-item"><a href="/about" class="navbar-link" data-nav-link>About</a></li>
           <li class="navbar-item"><a href="/services" class="navbar-link" data-nav-link>Services</a></li>
-          <li class="navbar-item"><a href="/portfolio" class="navbar-link" data-nav-link>Portfolio</a></li>
-          <li class="navbar-item"><a href="/contact" class="navbar-link" data-nav-link>Contact us</a></li>
+          <li class="navbar-item"><a href="/blog" class="navbar-link" data-nav-link>Blog</a></li>
+          <li class="navbar-item"><a href="/Contact" class="navbar-link" data-nav-link>Contact</a></li>
+          <li class="navbar-item"><a href="#" class="navbar-link" data-nav-link>Resume</a></li>
         </ul>
         <p class="navbar-title">My Address</p>
         <address class="navbar-text">Alexandria - Egypt</address>
@@ -194,24 +70,48 @@
         <div>
           <h3>Keep Up To Date</h3>
           <div class="contact-socials">
-            <a href="https://www.instagram.com/ahmdsaladin/" title="Instagram">I</a>
-            <a href="https://x.com/ahmdsaladin" title="Twitter">T</a>
-            <a href="https://www.facebook.com/AhmdSaladindesigns" title="Facebook">F</a>
-            <a href="https://www.youtube.com/ahmdsaladin" title="Youtube">Y</a>
-            <a href="https://linkedin.com/in/ahmdsaladin" title="LinkedIn">L</a>
-            <a href="https://github.com/ahmdsaladin" title="Github">G</a>
-            <a href="https://wa.me/01069761060" title="WhatsApp">W</a>
+            <a href="https://www.instagram.com/ahmdsaladin/" class="social-link" aria-label="Instagram">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#instagram-icon"/>
+              </svg>
+            </a>
+            <a href="https://www.behance.net/ahmdsaladin" class="social-link" aria-label="Behance">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#behance-icon"/>
+              </svg>
+            </a>
+            <a href="https://x.com/ahmdsaladin" class="social-link" aria-label="Twitter">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#twitter-icon"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/AhmdSaladindesigns" class="social-link" aria-label="Facebook">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#facebook-icon"/>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/ahmdsaladin" class="social-link" aria-label="YouTube">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#youtube-icon"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/ahmdsaladin" class="social-link" aria-label="LinkedIn">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#linkedin-icon"/>
+              </svg>
+            </a>
+            <a href="https://github.com/ahmdsaladin" class="social-link" aria-label="GitHub">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#github-icon"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/01069761060" class="social-link" aria-label="WhatsApp">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#whatsapp-icon"/>
+              </svg>
+            </a>
           </div>
         </div>
-      </div>
-      <div class="contact-form">
-        <h2>Send a Message</h2>
-        <form>
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send</button>
-        </form>
       </div>
     </section>
 
@@ -269,9 +169,55 @@
           <img src="./assets/images/Logo.png" width="40" height="40" loading="lazy" alt="Ahmd home">
         </a>
         <ul class="social-list">
-          <li><a href="https://www.facebook.com/ahmdsaladindesigns/" class="social-link">Fa.</a></li>
-          <li><a href="https://www.instagram.com/ahmdsaladin/" class="social-link">Insta.</a></li>
-          <li><a href="https://www.twitter.com/ahmdsaladin/" class="social-link">Tw.</a></li>
+          <li>
+            <a href="https://www.facebook.com/ahmdsaladindesigns/" class="social-link" aria-label="Facebook">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#facebook-icon"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/ahmdsaladin/" class="social-link" aria-label="Instagram">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#instagram-icon"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/ahmdsaladin" class="social-link" aria-label="Twitter">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#twitter-icon"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/ahmdsaladin" class="social-link" aria-label="YouTube">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#youtube-icon"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ahmdsaladin" class="social-link" aria-label="LinkedIn">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#linkedin-icon"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ahmdsaladin" class="social-link" aria-label="GitHub">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#github-icon"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/01069761060" class="social-link" aria-label="WhatsApp">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#whatsapp-icon"/>
+              </svg>
+            </a>
+          </li>
         </ul>
         <p class="copyright">Made with love by Ahmd Saladin</p>
       </div>

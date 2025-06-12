@@ -5,225 +5,282 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Ahmd Saladin</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/font/font.css">
     <style>
-        .gallery {
-            padding: 100px 0;
+        .rounded-img {
+            border-radius: 28px !important;
+            overflow: hidden;
         }
-
+        .gallery-section {
+            padding: 100px 0 0 0;
+        }
         .gallery-filter {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-bottom: 40px;
         }
-
         .filter-btn {
             padding: 8px 20px;
-            border: 1px solid var(--primary-color);
+            border: 1px solid var(--primary-color, #222);
             border-radius: 30px;
-            color: var(--primary-color);
+            color: var(--primary-color, #222);
             font-weight: 500;
+            background: none;
             transition: 0.3s ease;
             cursor: pointer;
         }
-
         .filter-btn.active,
         .filter-btn:hover {
-            background: var(--primary-color);
-            color: var(--white);
+            background: var(--primary-color, #222);
+            color: var(--white, #fff);
         }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
+        .masonry {
+            column-count: 4;
+            column-gap: 2rem;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
-
+        @media (max-width: 1200px) {
+            .masonry { column-count: 3; }
+        }
+        @media (max-width: 900px) {
+            .masonry { column-count: 2; }
+        }
+        @media (max-width: 600px) {
+            .masonry { column-count: 1; }
+        }
         .gallery-item {
-            position: relative;
-            border-radius: 10px;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 2rem;
+            break-inside: avoid;
+            background: #fff;
+            border-radius: 28px;
             overflow: hidden;
-            aspect-ratio: 1;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            transition: box-shadow 0.2s, transform 0.2s;
         }
-
         .gallery-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-item[data-category] {
-            display: none;
-        }
-
-        .gallery-item[data-category].show {
+            height: auto;
             display: block;
+            border-radius: 28px;
+            object-fit: cover;
+            background: #f6f6f6;
+            transition: transform 0.2s;
         }
-
-        @media (max-width: 768px) {
-            .gallery-filter {
-                flex-wrap: wrap;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
+        .gallery-item:hover {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+            transform: translateY(-4px) scale(1.02);
         }
+        .gallery-item.hide { display: none; }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header class="header" data-header>
-        <div class="container">
-            <a href="./index.html" class="logo">
-                <img src="./assets/images/Logo.png" width="40" height="40" alt="Ahmd home">
-            </a>
+<body id="top">
 
-            <nav class="navbar" data-navbar>
-                <div class="navbar-top">
-                    <a href="./index.html" class="logo">
-                        <img src="./assets/images/Logo.png" width="40" height="40" alt="Ahmd home">
-                    </a>
+<!-- HEADER (copied from index.html) -->
+<header class="header" data-header>
+  <div class="container">
+    <a href="#" class="logo">
+      <img src="./assets/images/Logo.png" width="40" height="40" alt="Ahmd home">
+    </a>
+    <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+      <img src="./assets/images/menu.svg" width="17" height="17" alt="menu icon">
+    </button>
+    <nav class="navbar" data-navbar>
+      <div class="navbar-top">
+        <a href="#" class="logo">
+          <p><img src="./assets/images/Logo3.png" width="140" height="40" alt="Ahmd home" class="img navbar-title">Ahmd</p>
+        </a>
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <span class="span one"></span>
+          <span class="span two"></span>
+        </button>
+      </div>
+      <ul class="navbar-list">
+        <li class="navbar-item"><a href="/home" class="navbar-link" data-nav-link>Home</a></li>
+        <li class="navbar-item"><a href="/gallery" class="navbar-link" data-nav-link>Gallery</a></li>
+        <li class="navbar-item"><a href="/about" class="navbar-link" data-nav-link>About</a></li>
+        <li class="navbar-item"><a href="/services" class="navbar-link" data-nav-link>Services</a></li>
+        <li class="navbar-item"><a href="/blog" class="navbar-link" data-nav-link>Blog</a></li>
+        <li class="navbar-item"><a href="/Contact" class="navbar-link" data-nav-link>Contact</a></li>
+        <li class="navbar-item"><a href="#" class="navbar-link" data-nav-link>Resume</a></li>
+      </ul>
+      <p class="navbar-title">My Address</p>
+      <address class="navbar-text">Alexandria - Egypt</address>
+      <p class="navbar-text">Urgent issue? call us at <a href="https://wa.me/01069761060" class="contact-link">+201069761060</a></p>
+    </nav>
+    <div class="overlay" data-nav-toggler data-overlay></div>
+  </div>
+</header>
 
-                    <button class="nav-close-btn" aria-label="Close menu">
-                        <ion-icon name="close-outline"></ion-icon>
-                    </button>
-                </div>
-
-                <ul class="navbar-list">
-                    <li class="navbar-item">
-                        <a href="./index.html" class="navbar-link">Home</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href="./index.html#about" class="navbar-link">About</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href="./gallery.html" class="navbar-link">Gallery</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href="./index.html#contact" class="navbar-link">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <button class="nav-open-btn" aria-label="Open menu">
-                <ion-icon name="menu-outline"></ion-icon>
-            </button>
-
-            <div class="overlay" data-overlay></div>
+<main>
+  <section class="gallery-section">
+    <div class="container">
+      <h2 class="h2 section-title">Gallery</h2>
+      <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="posters">Posters</button>
+        <button class="filter-btn" data-filter="products">Products</button>
+        <button class="filter-btn" data-filter="logos">Logos</button>
+      </div>
+      <div class="masonry" id="gallery-masonry">
+        <!-- Posters -->
+        <div class="gallery-item" data-category="posters">
+          <img class="rounded-img" src="./selection/Image (1).png" alt="Poster 1">
         </div>
-    </header>
-
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <h2 class="h2 section-title">Gallery</h2>
-            
-            <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="posters">Posters</button>
-                <button class="filter-btn" data-filter="products">Products</button>
-                <button class="filter-btn" data-filter="logos">Logos</button>
-            </div>
-
-            <div class="gallery-grid">
-                <!-- Selection Images -->
-                <div class="gallery-item" data-category="posters">
-                    <img src="./selection/Image (1).png" alt="Poster 1">
-                </div>
-                <div class="gallery-item" data-category="posters">
-                    <img src="./selection/Image (2).png" alt="Poster 2">
-                </div>
-                <div class="gallery-item" data-category="posters">
-                    <img src="./selection/Image (3).png" alt="Poster 3">
-                </div>
-                <div class="gallery-item" data-category="posters">
-                    <img src="./selection/Image (4).png" alt="Poster 4">
-                </div>
-                <div class="gallery-item" data-category="posters">
-                    <img src="./selection/Image (5).png" alt="Poster 5">
-                </div>
-                <div class="gallery-item" data-category="posters">
-                    <img src="./selection/Image (6).png" alt="Poster 6">
-                </div>
-                <div class="gallery-item" data-category="posters">
-                    <img src="./selection/Image (7).png" alt="Poster 7">
-                </div>
-                <div class="gallery-item" data-category="posters">
-                    <img src="./selection/Image (8).png" alt="Poster 8">
-                </div>
-
-                <!-- Product Images -->
-                <div class="gallery-item" data-category="products">
-                    <img src="./assets/Covers/coverc.png" alt="Product 1">
-                </div>
-                <div class="gallery-item" data-category="products">
-                    <img src="./assets/Covers/cover.png" alt="Product 2">
-                </div>
-                <div class="gallery-item" data-category="products">
-                    <img src="./assets/Covers/ChronoSlate OS - Cover Image.png" alt="Product 3">
-                </div>
-
-                <!-- Logo Images -->
-                <div class="gallery-item" data-category="logos">
-                    <img src="./assets/logos/IMG_9006_Original.PNG" alt="Logo 1">
-                </div>
-                <div class="gallery-item" data-category="logos">
-                    <img src="./assets/logos/IMG_0254_Original.PNG" alt="Logo 2">
-                </div>
-                <div class="gallery-item" data-category="logos">
-                    <img src="./assets/logos/l1.png" alt="Logo 3">
-                </div>
-                <div class="gallery-item" data-category="logos">
-                    <img src="./assets/logos/PicsArt_05-05-05.02.01_Original.PNG" alt="Logo 4">
-                </div>
-            </div>
+        <div class="gallery-item" data-category="posters">
+          <img class="rounded-img" src="./selection/Image (2).png" alt="Poster 2">
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="copyright">
-                &copy; 2024 <a href="#" class="copyright-link">Ahmd Saladin</a>. All rights reserved.
-            </p>
+        <div class="gallery-item" data-category="posters">
+          <img class="rounded-img" src="./selection/Image (3).png" alt="Poster 3">
         </div>
-    </footer>
+        <div class="gallery-item" data-category="posters">
+          <img class="rounded-img" src="./selection/Image (4).png" alt="Poster 4">
+        </div>
+        <div class="gallery-item" data-category="posters">
+          <img class="rounded-img" src="./selection/Image (5).png" alt="Poster 5">
+        </div>
+        <div class="gallery-item" data-category="posters">
+          <img class="rounded-img" src="./selection/Image (6).png" alt="Poster 6">
+        </div>
+        <div class="gallery-item" data-category="posters">
+          <img class="rounded-img" src="./selection/Image (7).png" alt="Poster 7">
+        </div>
+        <div class="gallery-item" data-category="posters">
+          <img class="rounded-img" src="./selection/Image (8).png" alt="Poster 8">
+        </div>
+        <!-- Products -->
+        <div class="gallery-item" data-category="products">
+          <img class="rounded-img" src="./assets/Covers/coverc.png" alt="Product 1">
+        </div>
+        <div class="gallery-item" data-category="products">
+          <img class="rounded-img" src="./assets/Covers/cover.png" alt="Product 2">
+        </div>
+        <div class="gallery-item" data-category="products">
+          <img class="rounded-img" src="./assets/Covers/ChronoSlate OS - Cover Image.png" alt="Product 3">
+        </div>
+        <!-- Logos -->
+        <div class="gallery-item" data-category="logos">
+          <img class="rounded-img" src="./assets/logos/IMG_9006_Original.PNG" alt="Logo 1">
+        </div>
+        <div class="gallery-item" data-category="logos">
+          <img class="rounded-img" src="./assets/logos/IMG_0254_Original.PNG" alt="Logo 2">
+        </div>
+        <div class="gallery-item" data-category="logos">
+          <img class="rounded-img" src="./assets/logos/l1.png" alt="Logo 3">
+        </div>
+        <div class="gallery-item" data-category="logos">
+          <img class="rounded-img" src="./assets/logos/PicsArt_05-05-05.02.01_Original.PNG" alt="Logo 4">
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-    <!-- Custom JS -->
-    <script src="./assets/js/script.js"></script>
-    <script>
-        // Gallery Filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
+<!-- FOOTER (copied from index.html) -->
+<footer class="footer">
+  <div class="footer-top section" id="contact">
+    <div class="container">
+      <p class="section-subtitle" data-reveal>Contact me</p>
+      <h2 class="h2 section-title" data-reveal>Work inquiry, Job oportunities? Send Message.</h2>
+      <a href="/contact" class="btn-icon" data-reveal>
+        <img src="./assets/images/arrow-forward.svg" width="43" height="20" loading="lazy" alt="arrow-forward icon">
+      </a>
+      <img src="./assets/logos/IMG_9006_Original.PNG" width="159" height="176" loading="lazy" alt="photography" class="abs-img abs-img-1" data-reveal>
+      <img src="./assets/logos/IMG_0254_Original.PNG" width="265" height="275" loading="lazy" alt="photography" class="abs-img abs-img-2" data-reveal>
+      <img src="./assets/logos/l1.png" width="303" height="272" loading="lazy" alt="photography" class="abs-img abs-img-3" data-reveal>
+      <img src="./assets/logos/PicsArt_05-05-05.02.01_Original.PNG" width="175" height="175" loading="lazy" alt="photography" class="abs-img abs-img-4" data-reveal>
+      <img src="./assets/images/footer-shape.svg" width="185" height="134" loading="lazy" alt="" class="shape">
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="./assets/images/Logo.png" width="40" height="40" loading="lazy" alt="Ahmd home">
+      </a>
+      <ul class="social-list">
+        <li>
+          <a href="https://www.facebook.com/ahmdsaladindesigns/" class="social-link" aria-label="Facebook">
+            <svg width="24" height="24" fill="currentColor">
+              <use href="./assets/images/social-icons.svg#facebook-icon"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/ahmdsaladin/" class="social-link" aria-label="Instagram">
+            <svg width="24" height="24" fill="currentColor">
+              <use href="./assets/images/social-icons.svg#instagram-icon"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/ahmdsaladin" class="social-link" aria-label="Twitter">
+            <svg width="24" height="24" fill="currentColor">
+              <use href="./assets/images/social-icons.svg#twitter-icon"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/ahmdsaladin" class="social-link" aria-label="YouTube">
+            <svg width="24" height="24" fill="currentColor">
+              <use href="./assets/images/social-icons.svg#youtube-icon"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/ahmdsaladin" class="social-link" aria-label="LinkedIn">
+            <svg width="24" height="24" fill="currentColor">
+              <use href="./assets/images/social-icons.svg#linkedin-icon"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ahmdsaladin" class="social-link" aria-label="GitHub">
+            <svg width="24" height="24" fill="currentColor">
+              <use href="./assets/images/social-icons.svg#github-icon"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/01069761060" class="social-link" aria-label="WhatsApp">
+            <svg width="24" height="24" fill="currentColor">
+              <use href="./assets/images/social-icons.svg#whatsapp-icon"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <p class="copyright">Made with love by Ahmd Saladin</p>
+    </div>
+  </div>
+  <div class="footer-bg has-before">
+    <img src="./Neo-futuristic Minimalist Wallpaper.png" width="1920" height="1135" loading="lazy" alt="photography" class="img-cover">
+  </div>
+</footer>
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-
-                const filterValue = btn.getAttribute('data-filter');
-
-                galleryItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.classList.add('show');
-                    } else {
-                        item.classList.remove('show');
-                    }
-                });
-            });
-        });
-
-        // Show all items initially
-        galleryItems.forEach(item => item.classList.add('show'));
-    </script>
+<a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>0%</a>
+<div class="cursor" data-cursor></div>
+<script src="./assets/js/script.js"></script>
+<script>
+// Gallery Filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(btn => btn.classList.remove('active'));
+    btn.classList.add('active');
+    const filterValue = btn.getAttribute('data-filter');
+    galleryItems.forEach(item => {
+      if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+        item.classList.remove('hide');
+      } else {
+        item.classList.add('hide');
+      }
+    });
+  });
+});
+</script>
 </body>
 </html> 

@@ -31,8 +31,8 @@
   <!-- 
     - preload images
   -->
-  <link rel="preload" as="image" href="./assets/images/loading.svg">
-  <link rel="preload" as="image" href="./assets/images/loading-circle.svg">
+  <link rel="preload" as="image" href="./assets/images/Logo.svg">
+  <link rel="preload" as="image" href="./assets/images/Logo3.svg">
 
 </head>
 
@@ -43,8 +43,8 @@
   -->
 
   <div class="loading" data-loading>
-    <img src="./assets/images/loading.svg" width="55" height="55" alt="loading" class="img">
-    <img src="./assets/images/loading-circle.svg" width="70" height="70" alt="" class="circle">
+    <img src="./assets/images/Logo.svg" width="55" height="55" alt="loading" class="img">
+    <img src="./assets/images/Logo3.svg" width="70" height="70" alt="" class="circle">
   </div>
 
 
@@ -70,7 +70,7 @@
 
         <div class="navbar-top">
           <a href="#" class="logo">
-            <img src="./assets/images/nav-logo.svg" width="140" height="40" alt="Ahmd home" class="img">
+            <p><img src="./assets/images/Logo3.png" width="140" height="40" alt="Ahmd home" class="img" class="navbar-title">Ahmd</p>
           </a>
 
           <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
@@ -98,13 +98,17 @@
           </li>
 
           <li class="navbar-item">
-            <a href="/portfolio" class="navbar-link" data-nav-link>Portfolio</a>
+            <a href="/blog" class="navbar-link" data-nav-link>Blog</a>
           </li>
 
           <li class="navbar-item">
-            <a href="/contact" class="navbar-link" data-nav-link>Contact us</a>
+            <a href="/Contact" class="navbar-link" data-nav-link>Contact</a>
           </li>
 
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Resume</a>
+          </li>
+          
         </ul>
 
 
@@ -150,10 +154,8 @@
               <strong class="strong" data-letter-effect>Design Architect</strong>
               <strong class="strong" data-letter-effect>Design Manager</strong>
               <strong class="strong" data-letter-effect>Senior Designer</strong>
-
-
+            </div>
             <p class="hero-text">9+ Years Of Experience</p>
-
           </div>
 
         </div>
@@ -171,16 +173,14 @@
 
       <section class="section gallery" id="gallery">
         <div class="container">
-
+          <h3 class="h3 section-title" id="portfolio-label" data-reveal>My Recent Work.</h3>
           <ul class="gallery-list">
 
             <li class="gallery-item" data-reveal>
 
               <div class="gallery-card">
 
-                <h2 class="h2 section-title" id="portfolio-label" data-reveal>My Recent Work.</h2>
-
-                <figure class="card-banner img-holder has-before" style="--width: 450; --height: 625;">
+                <figure class="card-banner img-holder has-before" style="--width: 416; --height: 625;">
                   <img src="./selection/Image (1).png" width="450" height="625" loading="lazy" class="img-cover">
                 </figure>
 
@@ -196,7 +196,7 @@
 
               <div class="gallery-card">
 
-                <figure class="card-banner img-holder has-before" style="--width: 450; --height: 625;">
+                <figure class="card-banner img-holder has-before" style="--width: 416; --height: 625;">
                   <img src="./selection/Image (2).png" width="450" height="625" loading="lazy" class="img-cover">
                 </figure>
 
@@ -216,7 +216,7 @@
 
               <div class="gallery-card">
 
-                <figure class="card-banner img-holder has-before" style="--width: 450; --height: 625;">
+                <figure class="card-banner img-holder has-before" style="--width: 416; --height: 625;">
                   <img src="./selection/Image (3).png" width="450" height="625" loading="lazy" class="img-cover">
                 </figure>
 
@@ -232,7 +232,7 @@
 
               <div class="gallery-card">
 
-                <figure class="card-banner img-holder has-before" style="--width: 450; --height: 625;">
+                <figure class="card-banner img-holder has-before" style="--width: 416; --height: 625;">
                   <img src="./selection/Image (4).png" width="450" height="625" loading="lazy" class="img-cover">
                 </figure>
 
@@ -252,7 +252,7 @@
 
               <div class="gallery-card">
 
-                <figure class="card-banner img-holder has-before" style="--width: 450; --height: 625;">
+                <figure class="card-banner img-holder has-before" style="--width: 416; --height: 625;">
                   <img src="./selection/Image (5).png" width="450" height="625" loading="lazy" class="img-cover">
                 </figure>
 
@@ -268,7 +268,7 @@
 
               <div class="gallery-card">
 
-                <figure class="card-banner img-holder has-before" style="--width: 450; --height: 625;">
+                <figure class="card-banner img-holder has-before" style="--width: 416; --height: 625;">
                   <img src="./selection/Image (6).png" width="450" height="625" loading="lazy" class="img-cover">
                 </figure>
 
@@ -288,7 +288,7 @@
 
               <div class="gallery-card">
 
-                <figure class="card-banner img-holder has-before" style="--width: 450; --height: 625;">
+                <figure class="card-banner img-holder has-before" style="--width: 416; --height: 625;">
                   <img src="./selection/Image (7).png" width="450" height="625" loading="lazy" class="img-cover">
                 </figure>
 
@@ -304,7 +304,7 @@
 
               <div class="gallery-card">
 
-                <figure class="card-banner img-holder has-before" style="--width: 450; --height: 625;">
+                <figure class="card-banner img-holder has-before" style="--width: 416; --height: 625;">
                   <img src="./selection/Image (8).png" width="450" height="625" loading="lazy" class="img-cover">
                 </figure>
 
@@ -482,119 +482,6 @@
 
 
 
-      <!-- 
-        - #SERVICE
-      -->
-
-      <section class="section service" id="service" aria-labelledby="service-lable">
-
-        <p class="section-subtitle container" id="service-lable">My Services</p>
-
-        <ul class="service-list">
-
-          <li data-reveal>
-            <div class="service-card container">
-
-              <img src="./assets/Covers/coverc.png" width="280" height="300" loading="lazy" alt="Poster Design"
-                class="img">
-
-              <div>
-                <h3 class="h3 card-title">Poster Design</h3>
-
-                <p class="card-subtitle">
-                  I create posters that tell stories, evoke emotions, and make a statement.
-                </p>
-              </div>
-
-              <a href="/posters" class="btn-icon" aria-label="See more">
-                <svg xmlns="http://www.w3.org/2000/svg" width="43" height="20" viewBox="0 0 43 20" fill="none">
-                  <path d="M0 10H41" stroke="white" stroke-width="2" />
-                  <path d="M33 1L41.9 10.2727L33 19" stroke="white" stroke-width="2" />
-                </svg>
-              </a>
-
-            </div>
-          </li>
-
-          <li data-reveal>
-            <div class="service-card container">
-
-              <img src="./assets/Covers/logos.png" width="280" height="300" loading="lazy" alt="Logo Design"
-                class="img">
-
-              <div>
-                <h3 class="h3 card-title">Logo Design</h3>
-
-                <p class="card-subtitle">
-                  I create logos that are unique, memorable, and timeless.
-                </p>
-              </div>
-
-              <a href="/logos" class="btn-icon" aria-label="See more">
-                <svg xmlns="http://www.w3.org/2000/svg" width="43" height="20" viewBox="0 0 43 20" fill="none">
-                  <path d="M0 10H41" stroke="white" stroke-width="2" />
-                  <path d="M33 1L41.9 10.2727L33 19" stroke="white" stroke-width="2" />
-                </svg>
-              </a>
-
-            </div>
-          </li>
-
-          <li data-reveal>
-            <div class="service-card container">
-
-              <img src="./assets/Covers/cover.png" width="280" height="300" loading="lazy" alt="UI/UX Design"
-                class="img">
-
-              <div>
-                <h3 class="h3 card-title">UI/UX Design</h3>
-
-                <p class="card-subtitle">
-                  I create user interfaces that are intuitive, efficient, and visually appealing.
-                </p>
-              </div>
-
-              <a href="/uiux" class="btn-icon" aria-label="See more">
-                <svg xmlns="http://www.w3.org/2000/svg" width="43" height="20" viewBox="0 0 43 20" fill="none">
-                  <path d="M0 10H41" stroke="white" stroke-width="2" />
-                  <path d="M33 1L41.9 10.2727L33 19" stroke="white" stroke-width="2" />
-                </svg>
-              </a>
-
-            </div>
-          </li>
-
-          <li data-reveal>
-            <div class="service-card container">
-
-              <img src="./assets/Covers/ChronoSlate OS - Cover Image.png" width="280" height="300" loading="lazy" alt="Branding"
-                class="img">
-
-              <div>
-                <h3 class="h3 card-title">Branding</h3>
-
-                <p class="card-subtitle">
-                  I create brand identities that are unique, memorable, and timeless.
-                </p>
-              </div>
-
-              <a href="/brands" class="btn-icon" aria-label="See more">
-                <svg xmlns="http://www.w3.org/2000/svg" width="43" height="20" viewBox="0 0 43 20" fill="none">
-                  <path d="M0 10H41" stroke="white" stroke-width="2" />
-                  <path d="M33 1L41.9 10.2727L33 19" stroke="white" stroke-width="2" />
-                </svg>
-              </a>
-
-            </div>
-          </li>
-
-        </ul>
-
-      </section>
-
-
-
-
 
 
     </article>
@@ -644,23 +531,59 @@
       <div class="container">
 
         <a href="#" class="logo">
-          <img src="./assets/images/logo.png" width="40" height="40" loading="lazy" alt="Ahmd home">
+          <img src="./assets/images/Logo.svg" width="40" height="40" loading="lazy" alt="Ahmd home">
         </a>
 
         <ul class="social-list">
-
           <li>
-            <a href="https://www.facebook.com/ahmdsaladindesigns/" class="social-link">Fa.</a>
+            <a href="https://www.facebook.com/ahmdsaladindesigns/" class="social-link" aria-label="Facebook">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#facebook-icon"/>
+              </svg>
+            </a>
           </li>
-
           <li>
-            <a href="https://www.instagram.com/ahmdsaladin/" class="social-link">Insta.</a>
+            <a href="https://www.instagram.com/ahmdsaladin/" class="social-link" aria-label="Instagram">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#instagram-icon"/>
+              </svg>
+            </a>
           </li>
-
           <li>
-            <a href="https://www.twitter.com/ahmdsaladin/" class="social-link">Tw.</a>
+            <a href="https://x.com/ahmdsaladin" class="social-link" aria-label="Twitter">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#twitter-icon"/>
+              </svg>
+            </a>
           </li>
-
+          <li>
+            <a href="https://www.youtube.com/ahmdsaladin" class="social-link" aria-label="YouTube">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#youtube-icon"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/ahmdsaladin" class="social-link" aria-label="LinkedIn">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#linkedin-icon"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ahmdsaladin" class="social-link" aria-label="GitHub">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#github-icon"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/01069761060" class="social-link" aria-label="WhatsApp">
+              <svg width="24" height="24" fill="currentColor">
+                <use href="./assets/images/social-icons.svg#whatsapp-icon"/>
+              </svg>
+            </a>
+          </li>
         </ul>
 
         <p class="copyright">Made with love by Ahmd Saladin</p>
