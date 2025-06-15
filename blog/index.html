@@ -98,6 +98,28 @@
       .blog-card-content { padding: 16px 10px 14px 10px; }
     }
   </style>
+  <style>
+    .blog-section {
+      background: linear-gradient(#d4f2ff 0%, #ffffff 100%);
+    }
+    .blog-card.featured {
+      grid-column: 1 / -1;
+    }
+    @media (min-width: 900px) {
+      .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .blog-card.featured {
+        grid-column: span 3;
+      }
+      .blog-card.featured .blog-card-img {
+        aspect-ratio: 21/9;
+      }
+      .blog-card.featured .blog-card-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body id="top">
   <!-- HEADER -->
@@ -140,25 +162,11 @@
     <section class="blog-section">
       <div class="container">
         <h2 class="h2 section-title" style="text-align:center;">Blog</h2>
-        <div class="blog-grid">
-          <!-- BLOG CARDS START -->
-          <!-- Each card below is a sample. Repeat for each post, filling in the data from the .mdx frontmatter and covers. -->
-          <!-- Example for one post: -->
-          <div class="blog-card">
-            <img class="blog-card-img" src="./blog/covers/3D Elements UI Trends 2025 Thumbnail.jpg" alt="3D Elements UI Trends 2025">
-            <div class="blog-card-content">
-              <div class="blog-card-meta">
-                <span>2025-02-24</span>
-                <span class="blog-card-tag">3D UI design</span>
-              </div>
-              <a class="blog-card-title" href="#">The Rise of 3D Elements in UI: Tools and Trends to Watch</a>
-              <div class="blog-card-summary">As digital design continues to evolve, 3D elements in UI are rapidly gaining momentum in 2025. With users craving more immersive and visually dynamic experience...</div>
-              <a class="blog-card-link" href="#">Read More</a>
-            </div>
-          </div>
-          <!-- Repeat similar blocks for each post, using the correct cover, title, summary, date, tag, and link. -->
+        <div id="blog-grid" class="blog-grid">
+          <!-- Blog cards will be injected dynamically by blog.js -->
         </div>
       </div>
+    <script src="../assets/js/blog.js"></script>
     </section>
   </main>
 
