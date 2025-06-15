@@ -24,7 +24,7 @@
       padding: 0 20px;
     }
     .blog-card {
-      background: #fff;
+      background: var(--white);
       border-radius: 24px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       overflow: hidden;
@@ -100,7 +100,7 @@
   </style>
   <style>
     .blog-section {
-      background: linear-gradient(#d4f2ff 0%, #ffffff 100%);
+      background: none;
     }
     .blog-card.featured {
       grid-column: 1 / -1;
@@ -162,6 +162,7 @@
     <section class="blog-section">
       <div class="container">
         <h2 class="h2 section-title" style="text-align:center;">Blog</h2>
+            <p class="blog-subtitle" style="text-align:center;font-size:2rem;margin-top:0.5rem;">Writing about design and tech.</p>
         <div id="blog-grid" class="blog-grid">
           <!-- Blog cards will be injected dynamically by blog.js -->
         </div>
