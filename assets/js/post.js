@@ -14,15 +14,30 @@
       return res.text();
     })
     .then(md => {
-      // Front-matter strip (--- YAML ---) quick & dirty
-      md = md.replace(/^---[\s\S]*?---/, '').trim();
+            // Parse front-matter for meta
+      const fm = md.match(/^---[\s\S]*?---/);
+      let meta = {};
+      if (fm) {
+        fm[0].replace(/^---|---$/g, '').split('\n').forEach(line => {
+          const idx = line.indexOf(':');
+          if (idx > -1) {
+            const key = line.slice(0, idx).trim();
+            const val = line.slice(idx + 1).trim().replace(/^"|"$/g, '');
+            if (key) meta[key] = val;
+          }
+        });
+        md = md.replace(fm[0], '').trim();
+      }
       const html = marked.parse(md);
       document.getElementById('post-content').innerHTML = html;
-      // Title & hero image from first # or ![]()
-      const firstH = document.querySelector('#post-content h1, #post-content h2');
-      const title = firstH ? firstH.textContent : slug.replace(/-/g, ' ');
-      const header = document.getElementById('post-header');
-      header.innerHTML = `<h1>${title}</h1>`;
+
+      // Determine title
+      const title = meta.title || slug.replace(/-/g, ' ');
+      document.getElementById('post-title').textContent = title;
+
+      // Hero background image
+      const heroImg = meta.image ? meta.image.replace(/^\//, '../') : `../blog/covers/${slug.replace(/-/g, ' ')} Thumbnail.jpg`;
+      document.getElementById('hero-blur').src = heroImg;
     })
     .catch(() => {
       document.getElementById('post-content').innerHTML = '<p>Error loading post.</p>';
