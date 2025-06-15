@@ -37,7 +37,9 @@
       margin: 80px auto;
       align-items: flex-start;
       padding: 0 30px;
-      color: #fff;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
     .about-bio-img {
       flex: 1 1 380px;
@@ -46,10 +48,8 @@
       height: 650px;
       border-radius: 24px;
       overflow: hidden;
-      background: #1a1a1a;
       display: flex;
       align-items: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       justify-content: center;
     }
@@ -62,10 +62,11 @@
     .about-bio-content {
       flex: 2 1 500px;
       min-width: 300px;
-      color: #fff;
+      color: #222;
+      padding: 40px;
     }
     .about-bio-content h2 {
-      color: #fff;
+      color: #222;
       margin-bottom: 20px;
       font-size: 2.2rem;
       font-weight: 600;
@@ -74,7 +75,20 @@
       margin-bottom: 20px;
       line-height: 1.8;
       font-size: 1.1rem;
-      color: rgba(255,255,255,0.9);
+      color: #444;
+    }
+    .about-bio-content .about-icons {
+      margin: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .about-bio-content .about-icons span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #666;
+      font-weight: 500;
     }
     .about-bio-content h2 {
       margin-bottom: 20px;
