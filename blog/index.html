@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog - Ahmd Saladin</title>
+  <meta name="description" content="Blog posts by Ahmd Saladin - Graphic Designer & Visual Artist">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/font/font.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Recoleta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     .blog-section {
       padding: 80px 0 40px 0;
@@ -217,14 +222,14 @@
           <li>
             <a href="https://github.com/ahmdsaladin" class="social-link" aria-label="GitHub">
               <svg width="24" height="24" fill="currentColor">
-                <use href="./assets/images/social-icons.svg#github-icon"/>
+                <use href="../assets/images/social-icons.svg#github-icon"/>
               </svg>
             </a>
           </li>
           <li>
             <a href="https://wa.me/01069761060" class="social-link" aria-label="WhatsApp">
               <svg width="24" height="24" fill="currentColor">
-                <use href="./assets/images/social-icons.svg#whatsapp-icon"/>
+                <use href="../assets/images/social-icons.svg#whatsapp-icon"/>
               </svg>
             </a>
           </li>
@@ -233,11 +238,27 @@
       </div>
     </div>
     <div class="footer-bg has-before">
-      <img src="./Neo-futuristic Minimalist Wallpaper.png" width="1920" height="1135" loading="lazy" alt="photography" class="img-cover">
+      <img src="../assets/images/Neo-futuristic Minimalist Wallpaper.png" width="1920" height="1135" loading="lazy" alt="photography" class="img-cover">
     </div>
   </footer>
   <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>0%</a>
   <div class="cursor" data-cursor></div>
-  <script src="./assets/js/script.js"></script>
+  <script src="../assets/js/script.js" defer></script>
+  <script>
+    // Add active class to current page in navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const navLinks = document.querySelectorAll('.navbar-link');
+      
+      navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
 </body>
-</html> 
+</html>
