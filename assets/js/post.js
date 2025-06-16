@@ -14,7 +14,7 @@
       return res.text();
     })
     .then(md => {
-            // Parse front-matter for meta
+      // Parse front-matter for meta
       const fm = md.match(/^---[\s\S]*?---/);
       let meta = {};
       if (fm) {
@@ -31,18 +31,30 @@
       const html = marked.parse(md);
       document.getElementById('post-content').innerHTML = html;
 
-      // Determine title
+      // Set post title
       const title = meta.title || slug.replace(/-/g, ' ');
       document.getElementById('post-title').textContent = title;
 
-            // Hero background image
-      let heroImg = params.get('img');
-      if (!heroImg) {
-        heroImg = meta.image ? meta.image : `./covers/${slug.replace(/-/g, ' ')} Thumbnail.jpg`;
+      // Set post date if available
+      if (meta.date) {
+        document.getElementById('post-date').textContent = new Date(meta.date).toLocaleDateString();
       }
-      const distEl = document.getElementById('hero-distortion');
-      if (distEl && window.GridDistortionInit && THREE) {
-        GridDistortionInit(distEl, { imageSrc: heroImg, grid: 15, mouse: 0.1, strength: 0.15, relaxation: 0.9 });
+
+      // Set post tag if available
+      if (meta.tag) {
+        const tagEl = document.getElementById('post-tag');
+        tagEl.textContent = meta.tag;
+        tagEl.style.marginLeft = '10px';
+        tagEl.style.padding = '2px 8px';
+        tagEl.style.borderRadius = '4px';
+        tagEl.style.background = 'var(--radical-red)';
+      }
+
+      // Set hero image if available
+      if (meta.image) {
+        const heroImg = document.getElementById('post-hero');
+        heroImg.src = meta.image;
+        heroImg.alt = title;
       }
     })
     .catch(() => {
