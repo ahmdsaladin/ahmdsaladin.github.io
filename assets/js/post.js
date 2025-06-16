@@ -14,40 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const postContent = document.getElementById('post-content');
   const tagsList = document.getElementById('tags-list');
   
-  // Show loading state
-  const showLoading = () => {
-    loadingSpinner.style.display = 'flex';
-    errorMessage.style.display = 'none';
-    blogPost.style.display = 'none';
-  };
-  
-  // Show error state
-  const showError = (message) => {
-    loadingSpinner.style.display = 'none';
-    errorMessage.style.display = 'block';
-    errorMessage.querySelector('p').textContent = message;
-    blogPost.style.display = 'none';
-  };
-  
-  // Show blog post content
+  // Show blog post content (simplified - no loading state)
   const showBlog = () => {
-    loadingSpinner.style.display = 'none';
-    errorMessage.style.display = 'none';
     blogPost.style.display = 'block';
-    
-    // Trigger animation
-    requestAnimationFrame(() => {
-      blogPost.style.opacity = '0';
-      blogPost.style.transform = 'translateY(20px)';
-      blogPost.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      
-      // Trigger reflow
-      void blogPost.offsetWidth;
-      
-      // Animate in
-      blogPost.style.opacity = '1';
-      blogPost.style.transform = 'translateY(0)';
-    });
+  };
+  
+  // Error handler (simplified)
+  const showError = (message) => {
+    console.error(message);
+    blogPost.innerHTML = `<div class="error-message">${message}</div>`;
+    blogPost.style.display = 'block';
   };
   
   // Format date
@@ -109,27 +85,34 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Load the post content
   const loadPostContent = async (postData) => {
-    const postPath = `/blog/posts/${slug}.md`;
-    console.log('Loading post from:', postPath);
+    // Try different possible paths for the markdown file
+    const possiblePaths = [
+      `/blog/posts/${slug}.md`,  // Direct path
+      `./posts/${slug}.md`,      // Relative path
+      `../posts/${slug}.md`,     // One level up
+      `${slug}.md`               // Current directory
+    ];
     
-    try {
-      const response = await fetch(postPath);
-      if (!response.ok) {
-        console.error('Failed to fetch post. Status:', response.status);
-        throw new Error(`Post content not found at ${postPath}`);
+    let lastError;
+    
+    for (const path of possiblePaths) {
+      try {
+        console.log('Trying to load post from:', path);
+        const response = await fetch(path);
+        if (!response.ok) {
+          console.log(`Failed to load from ${path}:`, response.status);
+          continue;
+        }
+        const content = await response.text();
+        console.log('Successfully loaded post content from:', path);
+        return content;
+      } catch (error) {
+        console.warn(`Error loading from ${path}:`, error.message);
+        lastError = error;
       }
-      const content = await response.text();
-      console.log('Successfully loaded post content');
-      return content;
-    } catch (error) {
-      console.error('Error loading post content:', error);
-      console.error('Error details:', {
-        message: error.message,
-        name: error.name,
-        stack: error.stack
-      });
-      throw new Error(`Failed to load post content: ${error.message}`);
     }
+    
+    throw new Error(`Could not load post content from any path. Last error: ${lastError?.message}`);
   };
   
   // Parse front matter from markdown
@@ -159,8 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize the post
   const initPost = async () => {
-    showLoading();
-    
     try {
       // Get post data from index
       const postData = await getPostData();
@@ -168,77 +149,66 @@ document.addEventListener('DOMContentLoaded', () => {
         throw new Error('Post not found');
       }
       
-      // Load post content
-      const markdown = await loadPostContent(postData);
-      const { frontMatter, content } = parseFrontMatter(markdown);
-      
       // Update post metadata
-      document.title = `${frontMatter.title || postData.title} | Ahmd Saladin's Blog`;
-      
-      // Set post content
-      postTitle.textContent = frontMatter.title || postData.title;
-      postSubtitle.textContent = frontMatter.description || postData.excerpt || '';
+      document.title = `${postData.title} | Ahmd Saladin's Blog`;
+      postTitle.textContent = postData.title;
+      postSubtitle.textContent = postData.excerpt || '';
       
       // Set post date
-      if (frontMatter.date || postData.date) {
-        const date = frontMatter.date || postData.date;
-        postDate.querySelector('.date').textContent = formatDate(date);
+      if (postData.date) {
+        postDate.querySelector('.date').textContent = formatDate(postData.date);
       } else {
         postDate.style.display = 'none';
       }
       
-      // Set reading time
-      const readingTime = calculateReadingTime(content);
-      postReadingTime.querySelector('.time').textContent = `${readingTime} min read`;
-      
       // Set post tags
-      if (frontMatter.tags || postData.tags) {
-        const tags = frontMatter.tags ? 
-          frontMatter.tags.split(',').map(tag => tag.trim()) : 
-          postData.tags || [];
-          
-        tagsList.innerHTML = tags.map(tag => 
+      if (postData.tags && postData.tags.length > 0) {
+        tagsList.innerHTML = postData.tags.map(tag => 
           `<a href="/blog?tag=${tag.toLowerCase()}" class="tag">${tag}</a>`
         ).join('');
       } else {
         document.querySelector('.post-tags').style.display = 'none';
       }
       
-      // Set post category/tag
-      if (frontMatter.category) {
-        postTag.querySelector('.tag').textContent = frontMatter.category;
-      } else if (postData.tags && postData.tags.length > 0) {
-        postTag.querySelector('.tag').textContent = postData.tags[0];
-      } else {
-        postTag.style.display = 'none';
-      }
-      
       // Set hero image if available
-      if (frontMatter.image || postData.cover) {
-        const imageUrl = frontMatter.image || 
-          (postData.cover.startsWith('http') ? postData.cover : `../${postData.cover}`);
+      if (postData.cover) {
+        const imageUrl = postData.cover.startsWith('http') ? 
+          postData.cover : 
+          `../${postData.cover}`;
         postHero.src = imageUrl;
-        postHero.alt = frontMatter.title || postData.title;
+        postHero.alt = postData.title;
       } else {
         postHero.parentElement.style.display = 'none';
       }
       
-      // Render markdown content
-      const html = marked.parse(content);
-      postContent.innerHTML = enhanceMarkdownContent(html);
-      
-      // Add copy buttons to code blocks
-      addCopyButtonsToCodeBlocks();
-      
-      // Set up anchor links for headings
-      setupAnchorLinks();
+      // Try to load markdown content
+      try {
+        const markdown = await loadPostContent(postData);
+        const { content } = parseFrontMatter(markdown);
+        
+        // Set reading time
+        const readingTime = calculateReadingTime(content);
+        postReadingTime.querySelector('.time').textContent = `${readingTime} min read`;
+        
+        // Render markdown content
+        postContent.innerHTML = marked.parse(content);
+        
+        // Add copy buttons to code blocks
+        addCopyButtonsToCodeBlocks();
+        
+        // Set up anchor links for headings
+        setupAnchorLinks();
+      } catch (error) {
+        console.warn('Could not load post content:', error);
+        postContent.innerHTML = '<p>This post could not be loaded. Please try again later.</p>';
+      }
       
       // Show the blog post
       showBlog();
       
     } catch (error) {
       console.error('Error loading post:', error);
-      showError(error.message || 'Failed to load the blog post. Please try again later.');
+      showError('Failed to load the blog post. Please try again later.');
     }
   };
   

@@ -40,31 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (!grid) return;
 
-  // Show loading state
-  function showLoading() {
-    loadingSpinner.style.display = 'flex';
-    errorMessage.style.display = 'none';
-    grid.style.display = 'none';
-  }
-
-  
-  // Show error state
-  function showError(message) {
-    loadingSpinner.style.display = 'none';
-    errorMessage.style.display = 'block';
-    grid.style.display = 'none';
-    
-    const errorText = errorMessage.querySelector('p');
-    if (errorText) {
-      errorText.textContent = message || 'Failed to load blog posts. Please try again later.';
-    }
-  }
-  
-  // Show blog grid
+  // Show blog grid (simplified - no loading state)
   function showBlog() {
-    loadingSpinner.style.display = 'none';
-    errorMessage.style.display = 'none';
     grid.style.display = 'grid';
+  }
+  
+  // Error handler (simplified)
+  function showError(message) {
+    console.error(message);
+    grid.innerHTML = `<div class="error-message">${message}</div>`;
   }
 
   // Function to create a blog card
