@@ -35,8 +35,11 @@
       const title = meta.title || slug.replace(/-/g, ' ');
       document.getElementById('post-title').textContent = title;
 
-      // Hero background image
-      const heroImg = meta.image ? meta.image.replace(/^\//, '../') : `../blog/covers/${slug.replace(/-/g, ' ')} Thumbnail.jpg`;
+            // Hero background image
+      let heroImg = params.get('img');
+      if (!heroImg) {
+        heroImg = meta.image ? meta.image : `./covers/${slug.replace(/-/g, ' ')} Thumbnail.jpg`;
+      }
       document.getElementById('hero-blur').src = heroImg;
     })
     .catch(() => {

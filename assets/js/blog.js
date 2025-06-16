@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
     card.innerHTML = `
       <img class="blog-card-img" src="${p.cover}" alt="${p.title}">
       <div class="blog-card-content">
-        <a class="blog-card-title" href="../blog/post.html?slug=${p.slug}">${p.title}</a>
-        <a class="blog-card-link" href="../blog/post.html?slug=${p.slug}">Read More</a>
+        <a class="blog-card-title" href="../blog/post.html?slug=${p.slug}&img=${encodeURIComponent(p.cover)}">${p.title}</a>
+        <a class="blog-card-link" href="../blog/post.html?slug=${p.slug}&img=${encodeURIComponent(p.cover)}">Read More</a>
       </div>`;
     grid.appendChild(card);
   });
