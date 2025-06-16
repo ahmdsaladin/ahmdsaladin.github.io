@@ -7,7 +7,7 @@
     return;
   }
 
-  const mdPath = `/blog/posts/${slug}.mdx`;
+  const mdPath = `/blog/postss/${slug}.mdx`;
   fetch(mdPath)
     .then(res => {
       if (!res.ok) throw new Error('MD not found');
