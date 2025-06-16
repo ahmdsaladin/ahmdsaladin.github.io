@@ -126,35 +126,40 @@ document.addEventListener('DOMContentLoaded', () => {
       .join(' ');
   }
 
-  // Process posts data
-  const posts = covers.map(cover => {
-    const slug = slugify(cover);
-    return {
-      slug,
-      cover: `./covers/${cover}`,
-      title: toTitle(slug.replace(/-/g, ' ')),
-      date: new Date().toISOString().split('T')[0],
-      excerpt: `Explore the latest insights on ${toTitle(slug.replace(/-/g, ' '))}.`,
-      tags: ['Design', 'UI/UX', '2025']
-    };
-  });
+  // Process posts data (fallback in case index.json fails)
+  const fallbackPosts = covers.map(cover => ({
+    title: toTitle(cover.replace('.jpg', '')),
+    excerpt: `This is a sample excerpt for ${toTitle(cover.replace('.jpg', ''))}. Click to read more.`,
+    date: new Date().toISOString().split('T')[0],
+    slug: slugify(cover.replace('.jpg', '')),
+    cover: `../blog/covers/${cover}`,
+    tags: ['sample', 'fallback']
+  }));
 
   // Handle retry button click
   if (retryButton) {
     retryButton.addEventListener('click', initBlog);
   }
 
-  // Simulate API call with loading state
-  const loadPosts = () => {
-    return new Promise((resolve, reject) => {
-      try {
-        setTimeout(() => {
-          resolve(posts);
-        }, 800); // Simulate network delay
-      } catch (error) {
-        reject(error);
+  // Fetch posts from the blog index
+  const loadPosts = async () => {
+    try {
+      const response = await fetch('/blog/index.json');
+      if (!response.ok) {
+        throw new Error('Failed to load blog posts');
       }
-    });
+      const data = await response.json();
+      
+      // Map the data to match the expected format
+      return data.map(post => ({
+        ...post,
+        cover: post.cover || `../blog/covers/${post.slug.replace(/\//g, '-')}.jpg`,
+        slug: post.slug || slugify(post.title)
+      }));
+    } catch (error) {
+      console.error('Error loading posts:', error);
+      throw new Error('Failed to load blog posts. Please try again later.');
+    }
   };
 
   // Initialize the blog
@@ -162,66 +167,43 @@ document.addEventListener('DOMContentLoaded', () => {
     showLoading();
     
     try {
-      const posts = await loadPosts();
+      let posts;
+      try {
+        // Try to load posts from index.json
+        posts = await loadPosts();
+      } catch (error) {
+        console.warn('Using fallback posts:', error.message);
+        posts = fallbackPosts;
+      }
+      
+      // Clear existing content
+      grid.innerHTML = '';
       
       if (!posts || posts.length === 0) {
         showError('No blog posts found.');
         return;
       }
       
-      // Clear the grid
-      grid.innerHTML = '';
-      
-      // Add featured post
-      const featuredPost = posts[0];
-      const featuredCard = createBlogCard(featuredPost, true);
-      grid.appendChild(featuredCard);
-      
-      // Add other posts in a grid
-      const postsGrid = document.createElement('div');
-      postsGrid.className = 'blog-grid-inner';
-      
-      // Show loading more indicator
-      const loadingMore = document.createElement('div');
-      loadingMore.className = 'loading-spinner';
-      loadingMore.innerHTML = `
-        <div class="spinner"></div>
-        <p>Loading more posts...</p>
-      `;
-      
-      // Append loading indicator first
-      grid.appendChild(postsGrid);
-      grid.appendChild(loadingMore);
-      
-      // Simulate loading more posts with a delay
-      setTimeout(() => {
-        loadingMore.remove();
-        
-        // Add posts to the grid
-        posts.slice(1).forEach(post => {
-          const card = createBlogCard(post);
-          postsGrid.appendChild(card);
-        });
-        
-        // Show the blog grid
-        showBlog();
+      // Add posts to the grid with animation
+      posts.forEach((post, index) => {
+        const card = createBlogCard(post, index === 0);
+        grid.appendChild(card);
         
         // Add animation to cards
-        const cards = document.querySelectorAll('.blog-card');
-        cards.forEach((card, index) => {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(20px)';
-          card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-          
-          // Trigger reflow
-          void card.offsetWidth;
-          
-          // Animate in
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
-        });
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
         
-      }, 1000);
+        // Trigger reflow
+        void card.offsetWidth;
+        
+        // Animate in
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      });
+      
+      // Show the blog grid
+      showBlog();
       
     } catch (error) {
       console.error('Error loading blog posts:', error);

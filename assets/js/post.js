@@ -74,26 +74,61 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Get the post data from the blog index
   const getPostData = async () => {
+    const indexUrl = '/blog/index.json';
+    console.log('Loading blog index from:', indexUrl);
+    
     try {
-      const response = await fetch('/blog/index.json');
-      if (!response.ok) throw new Error('Failed to load blog index');
+      const response = await fetch(indexUrl);
+      if (!response.ok) {
+        console.error('Failed to load blog index. Status:', response.status);
+        throw new Error(`Failed to load blog index: ${response.statusText}`);
+      }
+      
       const posts = await response.json();
-      return posts.find(post => post.slug === slug);
+      console.log('Successfully loaded blog index with', posts.length, 'posts');
+      
+      const post = posts.find(p => p.slug === slug);
+      if (!post) {
+        console.error('Post not found in index. Slug:', slug);
+        console.log('Available slugs:', posts.map(p => p.slug));
+        throw new Error(`Post with slug "${slug}" not found`);
+      }
+      
+      console.log('Found post data:', post);
+      return post;
+      
     } catch (error) {
-      console.error('Error loading blog index:', error);
-      throw new Error('Failed to load post data');
+      console.error('Error in getPostData:', {
+        message: error.message,
+        name: error.name,
+        stack: error.stack
+      });
+      throw new Error(`Failed to load post data: ${error.message}`);
     }
   };
   
   // Load the post content
   const loadPostContent = async (postData) => {
+    const postPath = `/blog/posts/${slug}.md`;
+    console.log('Loading post from:', postPath);
+    
     try {
-      const response = await fetch(`/blog/posts/${slug}.md`);
-      if (!response.ok) throw new Error('Post content not found');
-      return await response.text();
+      const response = await fetch(postPath);
+      if (!response.ok) {
+        console.error('Failed to fetch post. Status:', response.status);
+        throw new Error(`Post content not found at ${postPath}`);
+      }
+      const content = await response.text();
+      console.log('Successfully loaded post content');
+      return content;
     } catch (error) {
       console.error('Error loading post content:', error);
-      throw new Error('Failed to load post content');
+      console.error('Error details:', {
+        message: error.message,
+        name: error.name,
+        stack: error.stack
+      });
+      throw new Error(`Failed to load post content: ${error.message}`);
     }
   };
   

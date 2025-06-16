@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Welcome to My Blog",
+    "slug": "welcome-to-my-blog",
+    "date": "2025-06-16",
+    "excerpt": "My first blog post on my new website",
+    "tags": ["welcome", "blog", "first post"],
+    "cover": "/blog/covers/welcome-to-my-blog.jpg"
+  },
+  {
+    "title": "Getting Started with Web Development",
+    "slug": "getting-started-with-web-dev",
+    "date": "2025-06-15",
+    "excerpt": "A beginner's guide to web development",
+    "tags": ["web development", "beginners"],
+    "cover": "/blog/covers/web-dev-basics.jpg"
+  },
+  {
+    "title": "The Future of Web Design",
+    "slug": "future-of-web-design",
+    "date": "2025-06-10",
+    "excerpt": "Exploring the latest trends in web design",
+    "tags": ["design", "trends", "web"],
+    "cover": "/blog/covers/future-design.jpg"
+  }
+]
