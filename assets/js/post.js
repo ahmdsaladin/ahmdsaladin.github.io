@@ -40,7 +40,10 @@
       if (!heroImg) {
         heroImg = meta.image ? meta.image : `./covers/${slug.replace(/-/g, ' ')} Thumbnail.jpg`;
       }
-      document.getElementById('hero-blur').src = heroImg;
+      const distEl = document.getElementById('hero-distortion');
+      if (distEl && window.GridDistortionInit && THREE) {
+        GridDistortionInit(distEl, { imageSrc: heroImg, grid: 15, mouse: 0.1, strength: 0.15, relaxation: 0.9 });
+      }
     })
     .catch(() => {
       document.getElementById('post-content').innerHTML = '<p>Error loading post.</p>';

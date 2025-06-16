@@ -63,7 +63,15 @@
       justify-content:center;
       text-align:center;
     }
-    .hero-blur{
+    .hero-distortion{
+      position:absolute;
+      inset:0;
+    }
+    .hero-distortion canvas{width:100%!important;height:100%!important;display:block;}
+      position:absolute;
+      inset:0;
+    }
+    .hero-blur{/* fallback not used but keep */
       position:absolute;
       inset:0;
       width:100%;
@@ -163,7 +171,7 @@
 
   <main style="padding-top:80px;">
     <section class="post-hero" id="post-hero">
-      <img id="hero-blur" class="hero-blur" alt="" />
+      <div id="hero-distortion" class="hero-distortion"></div>
       <h1 id="post-title"></h1>
     </section>
     <div class="post-content" id="post-content"></div>
@@ -177,6 +185,8 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/three@0.157.0/build/three.min.js"></script>
+  <script src="../assets/js/grid-distortion.js"></script>
   <script src="../assets/js/post.js"></script>
   <script src="../assets/js/script.js"></script>
 </body>
