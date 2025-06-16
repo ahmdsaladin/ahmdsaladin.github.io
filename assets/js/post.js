@@ -50,12 +50,19 @@
         tagEl.style.background = 'var(--radical-red)';
       }
 
-      // Set hero image if available
-      if (meta.image) {
-        const heroImg = document.getElementById('post-hero');
-        heroImg.src = meta.image;
-        heroImg.alt = title;
+      // Choose hero image: prefer meta.image if it is a relative path in the repo,
+      // otherwise fall back to the cover image that matches the slug.
+      const heroImg = document.getElementById('post-hero');
+      let imgSrc = meta.image || '';
+      if (imgSrc.startsWith('/')) {
+        // Likely points to an assets path we don't have; switch to covers folder.
+        imgSrc = `./covers/${slug.replace(/-/g, ' ')} Thumbnail.jpg`;
       }
+      if (!imgSrc) {
+        imgSrc = `./covers/${slug.replace(/-/g, ' ')} Thumbnail.jpg`;
+      }
+      heroImg.src = imgSrc;
+      heroImg.alt = title;
     })
     .catch(() => {
       document.getElementById('post-content').innerHTML = '<p>Error loading post.</p>';
