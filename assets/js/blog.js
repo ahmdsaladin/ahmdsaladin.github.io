@@ -33,10 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   function slugify(str) {
-    return str.toLowerCase()
-      .replace(/ thumbnail\.jpg$/, '')
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/(^-|-$)/g, '');
+    // Remove trailing " Thumbnail.jpg" (case-insensitive) then
+    // convert spaces to dashes while preserving other punctuation
+    return str
+      .replace(/ Thumbnail\.jpg$/i, '')
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, '-');
   }
 
   function toTitle(slug) {
