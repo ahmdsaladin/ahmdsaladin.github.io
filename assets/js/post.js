@@ -1,10 +1,7 @@
 // Client-side post loader. Expects ?slug=some-post on URL
 document.addEventListener('DOMContentLoaded', () => {
   // DOM Elements
-  const loadingSpinner = document.getElementById('loading-spinner');
-  const errorMessage = document.getElementById('error-message');
   const blogPost = document.getElementById('blog-post');
-  const retryButton = document.getElementById('retry-button');
   const postHero = document.getElementById('post-hero');
   const postTitle = document.getElementById('post-title');
   const postSubtitle = document.getElementById('post-subtitle');
@@ -14,16 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const postContent = document.getElementById('post-content');
   const tagsList = document.getElementById('tags-list');
   
-  // Show blog post content (simplified - no loading state)
-  const showBlog = () => {
-    blogPost.style.display = 'block';
-  };
-  
-  // Error handler (simplified)
+  // Simple error handler
   const showError = (message) => {
+    if (blogPost) {
+      blogPost.innerHTML = `<div class="error-message">${message}</div>`;
+    }
     console.error(message);
-    blogPost.innerHTML = `<div class="error-message">${message}</div>`;
-    blogPost.style.display = 'block';
   };
   
   // Format date
@@ -151,63 +144,61 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Update post metadata
       document.title = `${postData.title} | Ahmd Saladin's Blog`;
-      postTitle.textContent = postData.title;
-      postSubtitle.textContent = postData.excerpt || '';
+      if (postTitle) postTitle.textContent = postData.title;
+      if (postSubtitle) postSubtitle.textContent = postData.excerpt || '';
       
       // Set post date
-      if (postData.date) {
-        postDate.querySelector('.date').textContent = formatDate(postData.date);
-      } else {
-        postDate.style.display = 'none';
+      if (postDate && postData.date) {
+        const dateElement = postDate.querySelector('.date');
+        if (dateElement) {
+          dateElement.textContent = formatDate(postData.date);
+        }
       }
       
       // Set post tags
-      if (postData.tags && postData.tags.length > 0) {
+      if (tagsList && postData.tags && postData.tags.length > 0) {
         tagsList.innerHTML = postData.tags.map(tag => 
           `<a href="/blog?tag=${tag.toLowerCase()}" class="tag">${tag}</a>`
         ).join('');
-      } else {
-        document.querySelector('.post-tags').style.display = 'none';
       }
       
       // Set hero image if available
-      if (postData.cover) {
-        const imageUrl = postData.cover.startsWith('http') ? 
+      if (postHero && postData.cover) {
+        postHero.src = postData.cover.startsWith('http') ? 
           postData.cover : 
           `../${postData.cover}`;
-        postHero.src = imageUrl;
         postHero.alt = postData.title;
-      } else {
-        postHero.parentElement.style.display = 'none';
       }
       
-      // Try to load markdown content
-      try {
-        const markdown = await loadPostContent(postData);
-        const { content } = parseFrontMatter(markdown);
-        
-        // Set reading time
-        const readingTime = calculateReadingTime(content);
-        postReadingTime.querySelector('.time').textContent = `${readingTime} min read`;
-        
-        // Render markdown content
-        postContent.innerHTML = marked.parse(content);
-        
-        // Add copy buttons to code blocks
-        addCopyButtonsToCodeBlocks();
-        
-        // Set up anchor links for headings
-        setupAnchorLinks();
-      } catch (error) {
-        console.warn('Could not load post content:', error);
-        postContent.innerHTML = '<p>This post could not be loaded. Please try again later.</p>';
+      // Load markdown content
+      if (postContent) {
+        try {
+          const markdown = await loadPostContent(postData);
+          const { content } = parseFrontMatter(markdown);
+          
+          // Set reading time
+          if (postReadingTime) {
+            const timeElement = postReadingTime.querySelector('.time');
+            if (timeElement) {
+              const readingTime = calculateReadingTime(content);
+              timeElement.textContent = `${readingTime} min read`;
+            }
+          }
+          
+          // Render markdown content
+          postContent.innerHTML = marked.parse(content);
+          
+          // Add copy buttons to code blocks
+          addCopyButtonsToCodeBlocks();
+          
+          // Set up anchor links for headings
+          setupAnchorLinks();
+        } catch (error) {
+          postContent.innerHTML = '<p>This post could not be loaded. Please try again later.</p>';
+        }
       }
-      
-      // Show the blog post
-      showBlog();
       
     } catch (error) {
-      console.error('Error loading post:', error);
       showError('Failed to load the blog post. Please try again later.');
     }
   };

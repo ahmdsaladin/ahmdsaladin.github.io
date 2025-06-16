@@ -32,23 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
     'Vernacular Design Thumbnail.jpg'
   ];
 
-  // Get DOM elements
-  const grid = document.getElementById('blog-grid');
-  const loadingSpinner = document.getElementById('loading-spinner');
-  const errorMessage = document.getElementById('error-message');
-  const retryButton = document.getElementById('retry-button');
+  const grid = document.querySelector('.blog-grid');
+  const tagFilter = document.getElementById('tag-filter');
+  const searchInput = document.getElementById('search-input');
+  const featuredContainer = document.querySelector('.featured-posts');
+  const regularContainer = document.querySelector('.regular-posts');
   
   if (!grid) return;
 
-  // Show blog grid (simplified - no loading state)
-  function showBlog() {
-    grid.style.display = 'grid';
-  }
-  
-  // Error handler (simplified)
+  // Simple error handler
   function showError(message) {
-    console.error(message);
     grid.innerHTML = `<div class="error-message">${message}</div>`;
+    console.error(message);
   }
 
   // Function to create a blog card
