@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js liko-dark-active" lang="zxx">
 
 <head>
    <meta charset="utf-8">
@@ -21,11 +21,13 @@
    <link rel="stylesheet" href="assets/css/spacing.css">
    <link rel="stylesheet" href="assets/css/custom-animation.css">
    <link rel="stylesheet" href="assets/css/main.css">
-
 </head>
 
-<body id="body" class="tp-magic-cursor">
+<body>
 
+   <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+   <![endif]-->
 
    <!-- pre loader area start -->
    <div id="loading" class="preloader-wrap">
@@ -44,18 +46,22 @@
    </div>
    <!-- pre loader area end -->
 
-   <!-- Begin magic cursor  
-   ======================== -->
-   <div id="magic-cursor">
-      <div id="ball"></div>
+   <!-- back to top start -->
+   <div class="back-to-top-wrapper">
+      <button id="back_to_top" type="button" class="back-to-top-btn">
+         <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+               stroke-linejoin="round" />
+         </svg>
+      </button>
    </div>
-   <!-- End magic cursor -->
+   <!-- back to top end -->
 
    <!-- tp-offcanvus-area-end -->
    <div class="tp-offcanvas-area">
       <div class="tp-offcanvas-wrapper">
          <div class="tp-offcanvas-top d-flex align-items-center justify-content-between">
-            <div class="tp-offcanvas-logo">
+                       <div class="tp-offcanvas-logo">
                <a href="index.html">
                   <img class="logo-1" src="assets/img/logo/logo.png" alt="">
                   <img class="logo-2" src="assets/img/logo/logo-white.png" alt="">
@@ -176,23 +182,99 @@
    <div class="body-overlay"></div>
    <!-- tp-offcanvus-area-end -->
 
+   <!-- cart mini area start -->
+   <div class="cartmini__area">
+      <div class="cartmini__wrapper d-flex justify-content-between flex-column">
+         <div class="cartmini__top-wrapper">
+            <div class="cartmini__top p-relative">
+               <div class="cartmini__top-title">
+                  <h4>Shopping cart</h4>
+               </div>
+               <div class="cartmini__close">
+                  <button type="button" class="cartmini__close-btn cartmini-close-btn"><i
+                        class="fal fa-times"></i></button>
+               </div>
+            </div>
+            <div class="cartmini__shipping">
+               <p> Free Shipping for all orders over <span>$50</span></p>
+               <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                     data-width="70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+               </div>
+            </div>
+            <div class="cartmini__widget">
+               <div class="cartmini__widget-item">
+                  <div class="cartmini__thumb">
+                     <a href="shop-details.html">
+                        <img src="assets/img/inner-blog/blog-sidebar/rc-post/rc-1.jpg" alt="">
+                     </a>
+                  </div>
+                  <div class="cartmini__content">
+                     <h5 class="cartmini__title"><a href="shop-details.html">Level Bolt Smart Lock</a></h5>
+                     <div class="cartmini__price-wrapper">
+                        <span class="cartmini__price">$46.00</span>
+                        <span class="cartmini__quantity">x2</span>
+                     </div>
+                  </div>
+                  <a href="#" class="cartmini__del"><i class="fa-regular fa-xmark"></i></a>
+               </div>
+            </div>
+         </div>
+         <div class="cartmini__checkout">
+            <div class="cartmini__checkout-title mb-30">
+               <h4>Subtotal:</h4>
+               <span>$113.00</span>
+            </div>
+            <div class="cartmini__checkout-btn">
+               <a href="cart.html" class="tp-btn-black-2 text-center mb-10 w-100"> view cart</a>
+               <a href="checkout.html" class="tp-btn-black-2 text-center w-100"> checkout</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- cart mini area end -->
 
-   <!-- Switcher Area End -->
+   <div class="subscribe-popup">
+      <!-- modal area start -->
+      <div class="tp-shop-popup-wrap d-flex align-items-center">
+         <div class="tp-shop-popup-img">
+            <img src="assets/img/inner-shop/window-popup.jpg" alt="">
+         </div>
+         <div class="tp-shop-popup-content text-center">
+            <div class="close"><i class="fa-light fa-xmark"></i></div>
+            <div class="tp-shop-popup-logo">
+               <img src="assets/img/logo/logo.png" alt="">
+            </div>
+            <div class="tp-shop-popup-text">
+               <h4>Save 15%</h4>
+               <p>ON TODAYS ORDER</p>
+               <span>SIGN UP BELOW FOR DISCOUNT CODE</span>
+            </div>
+            <form action="#">
+               <div class="tp-shop-popup-inputbox">
+                  <input type="text" placeholder="Email Address">
+                  <button class="tp-btn-black-square w-100" type="submit">Subscribe</button>
+               </div>
+            </form>
+         </div>
+      </div>
+      <!-- modal area end -->
+   </div>
 
-   <header class="tp-header-height">
+
+   <header class="tp-header-height z-index-5">
 
       <!-- header top area start -->
-      <div id="header-sticky" class="tp-header-area tp-header-mob-space tp-transparent pl-60 pr-60 z-index-9">
-         <div class="container">
+      <div class="tp-inner-header-2-area tp-shop-mob-space tp-transparent tp-inner-header-white">
+         <div class="container container-1800">
             <div class="row align-items-center">
-               <div class="col-xl-2 col-lg-2 col-6">
+               <div class="col-xl-2 col-lg-4 col-md-4 col-4">
                   <div class="tp-header-logo">
-                     <a class="logo-1" href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                     <a class="logo-2" href="index.html"><img src="assets/img/logo/logo-white.png" alt=""></a>
+                     <a href="index.html"><img src="assets/img/logo/logo-white.png" alt=""></a>
                   </div>
                </div>
-               <div class="col-xl-8 col-lg-9 d-none d-xl-block">
-                  <div class="tp-header-menu header-main-menu text-center">
+               <div class="col-xl-5 d-none d-xl-block">
+                  <div class="tp-inner-header-2-menu header-main-menu">
                      <nav class="tp-main-menu-content">
                         <ul>
                            <li class="has-dropdown">
@@ -445,7 +527,7 @@
                                                          <h4 class="tp-megamenu-title">PORTFOLIO LIST</h4>
                                                          <div class="tp-megamenu-list-wrap tp-portfolio-menu-style">
                                                             <div class="row">
-                                                               <div class="col-xl-6">
+                                                               <div class="col-lg-6">
                                                                   <ul>
                                                                      <li><a href="portfolio-standard.html">Standerd</a></li>
                                                                      <li><a href="index-10.html">Interactive</a></li>
@@ -456,9 +538,9 @@
                                                                      <li><a href="portfolio-wrapper.html">wrapper</a></li>
                                                                   </ul>
                                                                </div>
-                                                               <div class="col-xl-6">
+                                                               <div class="col-lg-6">
                                                                   <ul>
-                                                                     <li><a href="portfolio-horizontal.html">horizontal</a></li>
+                                                                     <li><a href="portfolio-showcase-1.html">horizontal</a></li>
                                                                      <li><a href="index-7.html">Image Slider</a></li>
                                                                      <li><a href="index-11.html">wrapper Slider</a></li>
                                                                      <li><a href="portfolio-showcase-1.html">parallax showcase</a></li>
@@ -535,11 +617,66 @@
                      </nav>
                   </div>
                </div>
-               <div class="col-xl-2 col-lg col-6">
-                  <div class="tp-header-bar text-end">
-                     <button class="tp-offcanvas-open-btn">
-                        <span></span>
-                        <span></span>
+               <div class="col-xl-5 col-lg-8 col-md-8 col-8">
+                  <div class="tp-inner-header-2-right d-flex align-items-center justify-content-end">
+                     <div class="tp-inner-header-2-search p-relative d-none d-lg-block">
+                        <input type="text" placeholder="Search">
+                        <span>
+                           <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                 d="M7.66666 14.3333C11.3486 14.3333 14.3333 11.3486 14.3333 7.66666C14.3333 3.98476 11.3486 1 7.66666 1C3.98476 1 1 3.98476 1 7.66666C1 11.3486 3.98476 14.3333 7.66666 14.3333Z"
+                                 stroke="currentcolor" stroke-width="1.5" stroke-linecap="round"
+                                 stroke-linejoin="round" />
+                              <path d="M15.9999 16L12.3749 12.375" stroke="currentcolor" stroke-width="1.5"
+                                 stroke-linecap="round" stroke-linejoin="round" />
+                           </svg>
+                        </span>
+                     </div>
+                     <button class="tp-shop-mob-search d-lg-none">
+                        <span>
+                           <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                 d="M7.66666 14.3333C11.3486 14.3333 14.3333 11.3486 14.3333 7.66666C14.3333 3.98476 11.3486 1 7.66666 1C3.98476 1 1 3.98476 1 7.66666C1 11.3486 3.98476 14.3333 7.66666 14.3333Z"
+                                 stroke="currentcolor" stroke-width="1.5" stroke-linecap="round"
+                                 stroke-linejoin="round" />
+                              <path d="M15.9999 16L12.3749 12.375" stroke="currentcolor" stroke-width="1.5"
+                                 stroke-linecap="round" stroke-linejoin="round" />
+                           </svg>
+                        </span>
+                     </button>
+                     <a class="tp-inner-header-2-wishlist p-relative" href="wishlist.html">
+                        <i>o</i>
+                        <span>
+                           <svg width="20" height="18" viewBox="0 0 20 18" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                 d="M17.612 2.38797C17.1722 1.94794 16.65 1.59888 16.0752 1.36073C15.5005 1.12258 14.8844 1 14.2623 1C13.6401 1 13.0241 1.12258 12.4493 1.36073C11.8746 1.59888 11.3524 1.94794 10.9126 2.38797L9.99977 3.30075L9.08699 2.38797C8.19858 1.49956 6.99364 1.00046 5.73725 1.00046C4.48085 1.00046 3.27591 1.49956 2.38751 2.38797C1.4991 3.27637 1 4.48131 1 5.73771C1 6.9941 1.4991 8.19904 2.38751 9.08745L3.30029 10.0002L9.99977 16.6997L16.6992 10.0002L17.612 9.08745C18.0521 8.64763 18.4011 8.12542 18.6393 7.55066C18.8774 6.9759 19 6.35985 19 5.73771C19 5.11556 18.8774 4.49951 18.6393 3.92475C18.4011 3.34999 18.0521 2.82779 17.612 2.38797Z"
+                                 stroke="currentcolor" stroke-width="1.5" stroke-linecap="round"
+                                 stroke-linejoin="round" />
+                           </svg>
+                        </span>
+                     </a>
+                     <button class="tp-inner-header-2-bar tp-offcanvas-open-btn">
+                        <span>
+                           <svg width="26" height="15" viewBox="0 0 26 15" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <rect width="26" height="1" fill="currentcolor" />
+                              <rect y="7" width="26" height="1" fill="currentcolor" />
+                              <rect y="14" width="26" height="1" fill="currentcolor" />
+                           </svg>
+                        </span>
+                     </button>
+                     <button class="tp-inner-header-2-cart cartmini-open-btn">
+                        <span>
+                           <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                 d="M7.02742 14.26C5.91809 14.26 4.87809 13.9913 3.90742 13.454C2.93676 12.9167 2.14809 12.1453 1.54142 11.14C0.952089 10.1173 0.657422 8.91267 0.657422 7.526C0.657422 6.13933 0.952089 4.94333 1.54142 3.938C2.14809 2.91533 2.93676 2.12667 3.90742 1.572C4.87809 1.01733 5.91809 0.739999 7.02742 0.739999C8.13676 0.739999 9.16809 1.01733 10.1214 1.572C11.0921 2.12667 11.8721 2.91533 12.4614 3.938C13.0508 4.94333 13.3454 6.13933 13.3454 7.526C13.3454 8.91267 13.0508 10.1173 12.4614 11.14C11.8721 12.1453 11.0921 12.9167 10.1214 13.454C9.16809 13.9913 8.13676 14.26 7.02742 14.26ZM7.02742 12.258C7.73809 12.258 8.41409 12.076 9.05542 11.712C9.69676 11.348 10.2254 10.8107 10.6414 10.1C11.0574 9.38933 11.2654 8.53133 11.2654 7.526C11.2654 6.52067 11.0574 5.66267 10.6414 4.952C10.2428 4.24133 9.71409 3.69533 9.05542 3.314C8.41409 2.93267 7.73809 2.742 7.02742 2.742C6.31676 2.742 5.63209 2.93267 4.97342 3.314C4.31476 3.678 3.77742 4.21533 3.36142 4.926C2.94542 5.63667 2.73742 6.50333 2.73742 7.526C2.73742 8.53133 2.94542 9.38933 3.36142 10.1C3.77742 10.8107 4.31476 11.348 4.97342 11.712C5.63209 12.076 6.31676 12.258 7.02742 12.258Z"
+                                 fill="currentcolor" />
+                           </svg>
+                        </span>
                      </button>
                   </div>
                </div>
@@ -550,178 +687,420 @@
 
    </header>
 
-   <!-- Modal -->
-   <div class="modal-wrapper p-relative" data-background="assets/img/home-01/team/team-details-bg.png">
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
-         <div class="modal-dialog">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-               </div>
-               <div class="modal-body">
-                  <!-- team-details area start -->
-                  <div class="tm-details-wrapper p-relative">
-                     <div class="tm-details-shape-1">
-                        <img src="assets/img/home-01/team/team-details-shape-1.png" alt="">
-                     </div>
-                     <div class="tm-details-shape-2">
-                        <img src="assets/img/home-01/team/team-details-shape-2.png" alt="">
-                     </div>
-                     <div class="container">
-                        <div class="row align-items-center align-items-xxl-end">
-                           <div class="col-xl-6 col-lg-6 col-md-7">
-                              <div class="tm-details-content-wrap z-index-5">
-                                 <div class="tm-details-title-box mb-20">
-                                    <span class="tm-hero-subtitle">Illustrator</span>
-                                    <h4 class="tm-details-title">Jassica Oliver</h4>
-                                 </div>
-                                 <div class="tm-details-text">
-                                    <p>I'm an illustrator, working for brands. My work is fuelled by my observing nature
-                                       and ongoing curiosity, utilizing simple shapes to tell all sorts of stories. My
-                                       clear signature applies to both my personal work as well as my commercial
-                                       commissions. Among my clients are Google, The New York Times, The New Yorker,
-                                       Facebook, Vogue, TED and Twitter. Oh and I like to paint. Which still feels very
-                                       new to me and slows me down.</p>
-                                 </div>
-                                 <div class="tm-details-portfolio mb-50">
-                                    <span class="tm-details-social-title">Portfolio:</span>
-                                    <a href="#">Behance</a>
-                                    <a href="#">Dribbble</a>
-                                    <a href="#">Meduim</a>
-                                 </div>
-                                 <div class="tm-details-social">
-                                    <span class="tm-details-social-title">Follow:</span>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-xl-6 col-lg-6 col-md-5">
-                              <div class="tm-details-thumb">
-                                 <img src="assets/img/home-01/team/team-details-1.png" alt="">
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- team-details area end -->
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- Modal -->
-
-
    <div id="smooth-wrapper">
       <div id="smooth-content">
 
          <main>
 
             <!-- hero area start -->
-            <div class="tp-hero-area tp-hero-ptb main-slider">
-               <div class="container-fluid">
-                  <div class="row justify-content-center">
-                     <div class="col-xxl-12">
-                        <div class="tp-hero-title-wrap mb-35 p-relative">
-                           <div class="tp-hero-shape-1">
-                              <img src="assets/img/home-01/hero/hero-bg-shape-1-1.svg" alt="">
-                           </div>
-                           <div class="tp-hero-title-box text-center">
-                              <h1 class="tp-hero-title tp_fade_bottom">
-                                 <span class="p-relative">
-                                    Creative
-                                    <span class="tp-hero-subtitle d-none d-lg-block ">Hello <br> People! We’re</span>
-                                    <span class="tp-hero-shape-2 d-none d-md-block">
-                                       <img src="assets/img/home-01/hero/hero-shape-1-1.png" alt="">
-                                    </span>
-                                 </span><br>Digital<span class="tp-hero-title-img"><img class="tp-zoom-img"
-                                       src="assets/img/home-01/hero/hero-1-1.png" alt=""></span>Studio
-                              </h1>
+            <div class="tp-shop-slider-area p-relative">
+               <div class="shop-slider-wrapper">
+                  <div class="swiper-container tp-shop-slider-active">
+                     <div class="tp-shop-slider-arrow-box">
+                        <button class="tp-shop-next"><i class="fa-light fa-angle-left"></i></button>
+                        <button class="tp-shop-prev"><i class="fa-light fa-angle-right"></i></button>
+                     </div>
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <div class="tp-shop-slider-bg tp-shop-slider-ovarlay">
+                              <div class="tp-shop-slider-thumb"
+                                 data-background="assets/img/inner-shop/home/slider-1.jpg"></div>
+                              <div class="container container-1300">
+                                 <div class="row">
+                                    <div class="col-xl-8">
+                                       <div class="tp-shop-slider-content z-index">
+                                          <div class="tp-shop-slider-title-box">
+                                             <span class="tp-shop-slider-subtitle">YOU MAY NEED</span>
+                                             <h2 class="tp-shop-slider-title">Shoes <br> Collection</h2>
+                                          </div>
+                                          <div class="tp-shop-slider-btn-box">
+                                             <a class="tp-shop-btn" href="shop-details.html">Shop Now</a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
                            </div>
                         </div>
-                        <div class="tp-hero-content tp_fade_bottom">
-                           <p>
-                              <span></span>
-                              Global digital design studio partnering with brands and businesses that create
-                              exceptional experiences. We are design and development agency based in Netherland.
-                           </p>
+                        <div class="swiper-slide">
+                           <div class="tp-shop-slider-bg tp-shop-slider-ovarlay">
+                              <div class="tp-shop-slider-thumb"
+                                 data-background="assets/img/inner-shop/home/slider-2.jpg"></div>
+                              <div class="container container-1300">
+                                 <div class="row">
+                                    <div class="col-xl-8">
+                                       <div class="tp-shop-slider-content z-index">
+                                          <div class="tp-shop-slider-title-box">
+                                             <span class="tp-shop-slider-subtitle">YOU MAY NEED</span>
+                                             <h2 class="tp-shop-slider-title">Shoes <br> Collection</h2>
+                                          </div>
+                                          <div class="tp-shop-slider-btn-box">
+                                             <a class="tp-shop-btn" href="shop-details.html">Shop Now</a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="tp-shop-slider-bg tp-shop-slider-ovarlay">
+                              <div class="tp-shop-slider-thumb"
+                                 data-background="assets/img/inner-shop/home/slider-3.jpg"></div>
+                              <div class="container container-1300">
+                                 <div class="row">
+                                    <div class="col-xl-8">
+                                       <div class="tp-shop-slider-content z-index">
+                                          <div class="tp-shop-slider-title-box">
+                                             <span class="tp-shop-slider-subtitle">YOU MAY NEED</span>
+                                             <h2 class="tp-shop-slider-title">Shoes <br> Collection</h2>
+                                          </div>
+                                          <div class="tp-shop-slider-btn-box">
+                                             <a class="tp-shop-btn" href="shop-details.html">Shop Now</a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
                      </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-xl-12">
+                     <div class="fraction-wrapper d-none d-lg-block">
+                        <div id="paginations"></div>
+                        <div class="shop-slider-progress-bar">
+                           <span></span>
+                        </div>
                      </div>
                   </div>
                </div>
             </div>
             <!-- hero area end -->
-            <div class="tp-hero-bottom-img-wrap">
-               <div class="tp-hero-bottom-img">
-                  <video loop="" muted="" autoplay="" playsinline="">
-                     <source src="https://html.hixstudio.net/videos/liko/liko.mp4" type="video/mp4">
-                  </video>
+
+            <!-- shop category area start -->
+            <div class="tp-shop-category-area pt-100 pb-90">
+               <div class="container container-1720">
+                  <div class="row">
+                     <div class="col-xl-4 col-lg-6 col-md-6 mb-30">
+                        <div class="tp-shop-category-item p-relative fix">
+                           <img src="assets/img/inner-shop/category/category-1.jpg" alt="">
+                           <a class="tp-btn-shop-category" href="shop-details.html">Shop men</a>
+                        </div>
+                     </div>
+                     <div class="col-xl-4 col-lg-6 col-md-6 mb-30">
+                        <div class="tp-shop-category-item p-relative fix">
+                           <img src="assets/img/inner-shop/category/category-2.jpg" alt="">
+                           <a class="tp-btn-shop-category" href="shop-details.html">Shop Women</a>
+                        </div>
+                     </div>
+                     <div class="col-xl-4 col-lg-6 col-md-6 mb-30">
+                        <div class="tp-shop-category-item p-relative fix">
+                           <img src="assets/img/inner-shop/category/category-3.jpg" alt="">
+                           <a class="tp-btn-shop-category" href="shop-details.html">Shop Kid’s</a>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
+            <!-- shop category area end -->
 
-            <!-- brand area start -->
-            <div class="tp-brand-area">
-               <div class="container container-1630">
-                  <div class="tp-brand-brd-top tp-brand-ptb">
-                     <div class="row align-items-center">
-                        <div class="col-xxl-2 col-xl-3 col-lg-3">
-                           <div class="tp-brand-title-box">
-                              <h4 class="tp-brand-title tp_fade_bottom">Clients I’ve Worked With</h4>
+            <!-- shop banner area start -->
+            <div class="tp-shop-banner-area pb-90">
+               <div class="container container-1300">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-6 col-md-6">
+                        <div class="tp-shop-banner-left p-relative mb-30">
+                           <div class="tp-shop-banner-thumb fix">
+                              <img src="assets/img/inner-shop/banner/banner-1.jpg" alt="">
+                           </div>
+                           <div class="tp-shop-banner-content">
+                              <h4 class="tp-shop-banner-title">Sale</h4>
+                              <span>20% Off all Shoes</span>
+                              <a class="tp-shop-btn" href="shop-details.html">Shop Now</a>
                            </div>
                         </div>
-                        <div class="col-xxl-10 col-xl-9 col-lg-9">
-                           <div class="row align-items-center">
-                              <div class="col-xl-12">
-                                 <div class="tp-brand-slider-wrapper">
-                                    <div class="swiper-container tp-brand-slider-active fix">
-                                       <div class="swiper-wrapper brand-wrapper">
-                                          <div class="swiper-slide">
-                                             <div class="tp-brand-item">
-                                                <img src="assets/img/home-01/brand/brand-1.png" alt="">
-                                             </div>
-                                          </div>
-                                          <div class="swiper-slide">
-                                             <div class="tp-brand-item">
-                                                <img src="assets/img/home-01/brand/brand-2.png" alt="">
-                                             </div>
-                                          </div>
-                                          <div class="swiper-slide">
-                                             <div class="tp-brand-item">
-                                                <img src="assets/img/home-01/brand/brand-3.png" alt="">
-                                             </div>
-                                          </div>
-                                          <div class="swiper-slide">
-                                             <div class="tp-brand-item">
-                                                <img src="assets/img/home-01/brand/brand-4.png" alt="">
-                                             </div>
-                                          </div>
-                                          <div class="swiper-slide">
-                                             <div class="tp-brand-item">
-                                                <img src="assets/img/home-01/brand/brand-5.png" alt="">
-                                             </div>
-                                          </div>
-                                          <div class="swiper-slide">
-                                             <div class="tp-brand-item">
-                                                <img src="assets/img/home-01/brand/brand-7.png" alt="">
-                                             </div>
-                                          </div>
-                                          <div class="swiper-slide">
-                                             <div class="tp-brand-item">
-                                                <img src="assets/img/home-01/brand/brand-6.png" alt="">
-                                             </div>
-                                          </div>
-                                          <div class="swiper-slide">
-                                             <div class="tp-brand-item">
-                                                <img src="assets/img/home-01/brand/brand-2.png" alt="">
-                                             </div>
-                                          </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6 col-md-6">
+                        <div class="tp-shop-banner-right mb-30">
+                           <div class="tp-shop-banner-thumb fix mb-40">
+                              <img src="assets/img/inner-shop/banner/banner-2.jpg" alt="">
+                           </div>
+                           <div class="tp-shop-banner-content text-center">
+                              <h4 class="tp-shop-banner-title sm tp-text-black">Special Offer</h4>
+                              <span class="text-color-black">Up to 65% off first order</span>
+                              <a class="tp-shop-btn border-style" href="shop-details.html">Shop Now</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- shop banner area end -->
+
+            <!-- shop product area end -->
+            <div class="tp-shop-area pb-90">
+               <div class="container-fluid">
+                  <div class="tp-shop-top-text-wrap">
+                     <div class="row">
+                        <div class="col-6">
+                           <div class="tp-shop-top-text">
+                              <span>Trending Products</span>
+                           </div>
+                        </div>
+                        <div class="col-6">
+                           <div class="tp-shop-top-text text-end">
+                              <span><a href="shop-sidebar.html">View all</a></span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-xl-6">
+                        <div class="tp-shop-left-thumb mb-30">
+                           <img class="w-100" src="assets/img/inner-shop/product/product-1.jpg" alt="">
+                        </div>
+                     </div>
+                     <div class="col-xl-6">
+                        <div class="tp-shop-right">
+                           <div class="row">
+                              <div class="col-xl-6 col-lg-6 col-md-6">
+                                 <div class="tp-shop-right-item mb-30 p-relative">
+                                    <div class="tp-shop-right-thumb fix">
+                                       <img class="w-100" src="assets/img/inner-shop/product/product-2.jpg" alt="">
+                                    </div>
+                                    <div class="tp-shop-right-content d-flex align-items-end justify-content-between">
+                                       <div class="tp-shop-right-title-box">
+                                          <span>Tennis</span>
+                                          <h4 class="tp-shop-right-title"><a href="shop-details.html">Sky Blue
+                                                Adidas</a></h4>
                                        </div>
+                                       <div class="tp-shop-right-price">
+                                          <span>$225</span>
+                                       </div>
+                                    </div>
+                                    <div class="tp-product-btn-box">
+                                       <a class="tp-btn-shop-category black-bg w-100" href="shop-details.html">Shop
+                                          Now</a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-xl-6 col-lg-6 col-md-6">
+                                 <div class="tp-shop-right-item mb-30 p-relative">
+                                    <div class="tp-shop-right-thumb fix">
+                                       <img class="w-100" src="assets/img/inner-shop/product/product-3.jpg" alt="">
+                                    </div>
+                                    <div class="tp-shop-right-content d-flex align-items-end justify-content-between">
+                                       <div class="tp-shop-right-title-box">
+                                          <span>Tennis</span>
+                                          <h4 class="tp-shop-right-title"><a href="shop-details.html">Sky Blue
+                                                Adidas</a></h4>
+                                       </div>
+                                       <div class="tp-shop-right-price">
+                                          <span>$330</span>
+                                       </div>
+                                    </div>
+                                    <div class="tp-product-btn-box">
+                                       <a class="tp-btn-shop-category black-bg w-100" href="shop-details.html">Shop
+                                          Now</a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-xl-6 col-lg-6 col-md-6">
+                                 <div class="tp-shop-right-item mb-30 p-relative">
+                                    <div class="tp-shop-right-thumb fix">
+                                       <img class="w-100" src="assets/img/inner-shop/product/product-4.jpg" alt="">
+                                    </div>
+                                    <div class="tp-shop-right-content d-flex align-items-end justify-content-between">
+                                       <div class="tp-shop-right-title-box">
+                                          <span>Tennis</span>
+                                          <h4 class="tp-shop-right-title"><a href="shop-details.html">Sky Blue
+                                                Adidas</a></h4>
+                                       </div>
+                                       <div class="tp-shop-right-price">
+                                          <span>$125</span>
+                                       </div>
+                                    </div>
+                                    <div class="tp-product-btn-box">
+                                       <a class="tp-btn-shop-category black-bg w-100" href="shop-details.html">Shop
+                                          Now</a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-xl-6 col-lg-6 col-md-6">
+                                 <div class="tp-shop-right-item mb-30 p-relative">
+                                    <div class="tp-shop-right-thumb fix">
+                                       <img class="w-100" src="assets/img/inner-shop/product/product-9.jpg" alt="">
+                                    </div>
+                                    <div class="tp-shop-right-content d-flex align-items-end justify-content-between">
+                                       <div class="tp-shop-right-title-box">
+                                          <span>Tennis</span>
+                                          <h4 class="tp-shop-right-title"><a href="shop-details.html">Sky Blue
+                                                Adidas</a></h4>
+                                       </div>
+                                       <div class="tp-shop-right-price">
+                                          <span>$848</span>
+                                       </div>
+                                    </div>
+                                    <div class="tp-product-btn-box">
+                                       <a class="tp-btn-shop-category black-bg w-100" href="shop-details.html">Shop
+                                          Now</a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-xl-6 col-lg-6 col-md-6">
+                                 <div class="tp-shop-right-item mb-30 p-relative">
+                                    <div class="tp-shop-right-thumb fix">
+                                       <img class="w-100" src="assets/img/inner-shop/product/product-6.jpg" alt="">
+                                    </div>
+                                    <div class="tp-shop-right-content d-flex align-items-end justify-content-between">
+                                       <div class="tp-shop-right-title-box">
+                                          <span>Tennis</span>
+                                          <h4 class="tp-shop-right-title"><a href="shop-details.html">Sky Blue
+                                                Adidas</a></h4>
+                                       </div>
+                                       <div class="tp-shop-right-price">
+                                          <span>$258</span>
+                                       </div>
+                                    </div>
+                                    <div class="tp-product-btn-box">
+                                       <a class="tp-btn-shop-category black-bg w-100" href="shop-details.html">Shop
+                                          Now</a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-xl-6 col-lg-6 col-md-6">
+                                 <div class="tp-shop-right-item mb-30 p-relative">
+                                    <div class="tp-shop-right-thumb fix">
+                                       <img class="w-100" src="assets/img/inner-shop/product/product-7.jpg" alt="">
+                                    </div>
+                                    <div class="tp-shop-right-content d-flex align-items-end justify-content-between">
+                                       <div class="tp-shop-right-title-box">
+                                          <span>Tennis</span>
+                                          <h4 class="tp-shop-right-title"><a href="shop-details.html">Sky Blue
+                                                Adidas</a></h4>
+                                       </div>
+                                       <div class="tp-shop-right-price">
+                                          <span>$348</span>
+                                       </div>
+                                    </div>
+                                    <div class="tp-product-btn-box">
+                                       <a class="tp-btn-shop-category black-bg w-100" href="shop-details.html">Shop
+                                          Now</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- shop product area end -->
+
+            <!-- shop banner area start -->
+            <div class="tp-shop-banner-area pb-120">
+               <div class="container-fluid">
+                  <div class="tp-shop-banner-anim">
+                     <img data-speed=".8" class="w-100" src="assets/img/inner-shop/banner/banner-3.jpg" alt="">
+                  </div>
+               </div>
+            </div>
+            <!-- shop banner area end -->
+
+            <!-- instagram area start -->
+            <div class="tp-shop-insta-area pb-90">
+               <div class="container container-1300">
+                  <div class="row justify-content-center">
+                     <div class="col-xl-6">
+                        <div class="tp-shop-insta-title-box mb-70 text-center">
+                           <span>Follow Us</span>
+                           <h4 class="tp-shop-insta-title"><a href="mailto:@liko.shoes">@liko.shoes</a></h4>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-2 col-4">
+                        <div class="tp-shop-insta-thumb mb-30">
+                           <a href="#">
+                              <img data-speed="1.1" src="assets/img/inner-shop/instagram/insta-1.jpg" alt="">
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-2 col-4">
+                        <div class="tp-shop-insta-thumb mb-30">
+                           <a href="#">
+                              <img data-speed="1.2" src="assets/img/inner-shop/instagram/insta-2.jpg" alt="">
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-2 col-4">
+                        <div class="tp-shop-insta-thumb mb-30">
+                           <a href="#">
+                              <img data-speed="1.1" src="assets/img/inner-shop/instagram/insta-3.jpg" alt="">
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-2 col-4">
+                        <div class="tp-shop-insta-thumb mb-30">
+                           <a href="#">
+                              <img data-speed="1.2" src="assets/img/inner-shop/instagram/insta-4.jpg" alt="">
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-2 col-4">
+                        <div class="tp-shop-insta-thumb mb-30">
+                           <a href="#">
+                              <img data-speed="1.1" src="assets/img/inner-shop/instagram/insta-5.jpg" alt="">
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-md-2 col-4">
+                        <div class="tp-shop-insta-thumb mb-30">
+                           <a href="#">
+                              <img data-speed="1.2" src="assets/img/inner-shop/instagram/insta-6.jpg" alt="">
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- instagram area end -->
+
+            <!-- brand area start -->
+            <div class="tp-shop-brand-area mb-100">
+               <div class="container container-1300">
+                  <div class="row">
+                     <div class="col-xl-12">
+                        <div class="tp-shop-brand-wrapper">
+                           <div class="swiper-container tp-shop-brand-active fix">
+                              <div class="swiper-wrapper">
+                                 <div class="swiper-slide">
+                                    <div class="tp-shop-brand-item">
+                                       <img src="assets/img/inner-shop/brand/brand-1.png" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="swiper-slide">
+                                    <div class="tp-shop-brand-item">
+                                       <img src="assets/img/inner-shop/brand/brand-2.png" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="swiper-slide">
+                                    <div class="tp-shop-brand-item">
+                                       <img src="assets/img/inner-shop/brand/brand-3.png" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="swiper-slide">
+                                    <div class="tp-shop-brand-item">
+                                       <img src="assets/img/inner-shop/brand/brand-4.png" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="swiper-slide">
+                                    <div class="tp-shop-brand-item">
+                                       <img src="assets/img/inner-shop/brand/brand-5.png" alt="">
+                                    </div>
+                                 </div>
+                                 <div class="swiper-slide">
+                                    <div class="tp-shop-brand-item">
+                                       <img src="assets/img/inner-shop/brand/brand-3.png" alt="">
                                     </div>
                                  </div>
                               </div>
@@ -733,496 +1112,120 @@
             </div>
             <!-- brand area end -->
 
-            <!-- service area start -->
-            <div class="tp-service-area pt-180 pb-80 tp-btn-trigger">
-               <div class="container container-1630">
-                  <div class="row">
-                     <div class="col-xl-6 col-lg-6">
-                        <div class="tp-service-title-box p-relative">
-                           <span class="tp-section-subtitle subtitle-position tp-char-animation">I Think a lot</span>
-                           <h4 class="tp-section-title tp-char-animation">
-                              Thoughtful<br>
-                              <span>Process</span>
-                           </h4>
-                        </div>
-                        <div class="tp-service-left-btn tp-btn-bounce">
-                           <a class="tp-btn-border" href="service.html">
-                              <span class="tp-btn-border-wrap">
-                                 <span class="text-1">See All Services</span>
-                                 <span class="text-2">See All Services</span>
-                              </span>
-                           </a>
-                        </div>
-                     </div>
-                     <div class="col-xl-6 col-lg-6">
-                        <div class="tp-service-right-wrap">
-                           <div class="tp-service-item d-flex align-items-start mb-75 tp_fade_bottom">
-                              <div class="tp-service-icon">
-                                 <img src="assets/img/home-01/service/service-icon-1.png" alt="">
-                              </div>
-                              <div class="tp-service-content">
-                                 <h4 class="tp-service-title-sm order-0"><a href="service-details.html">VIDEO CREATION</a></h4>
-                                 <p class="order-1">Dolor magna eget est lorem ipsum dolor sit amet consectetur.
-                                    Bibendum
-                                    est ultricies integer quis auctor elit sed.</p>
-                              </div>
-                           </div>
-                           <div class="tp-service-item d-flex align-items-start mb-75 tp_fade_bottom">
-                              <div class="tp-service-icon">
-                                 <img src="assets/img/home-01/service/service-icon-2.png" alt="">
-                              </div>
-                              <div class="tp-service-content">
-                                 <h4 class="tp-service-title-sm"><a href="service-details.html">ART DIRECTION</a></h4>
-                                 <p>Dolor magna eget est lorem ipsum dolor sit amet consectetur. Bibendum
-                                    est ultricies integer quis auctor elit sed.</p>
-                              </div>
-                           </div>
-                           <div class="tp-service-item d-flex align-items-start mb-75 tp_fade_bottom">
-                              <div class="tp-service-icon">
-                                 <img src="assets/img/home-01/service/service-icon-3.png" alt="">
-                              </div>
-                              <div class="tp-service-content">
-                                 <h4 class="tp-service-title-sm"><a href="service-details.html">MOTION DESIGN</a></h4>
-                                 <p>Dolor magna eget est lorem ipsum dolor sit amet consectetur. Bibendum
-                                    est ultricies integer quis auctor elit sed.</p>
-                              </div>
-                           </div>
-                           <div class="tp-service-item d-flex align-items-start mb-75 tp_fade_bottom">
-                              <div class="tp-service-icon">
-                                 <img src="assets/img/home-01/service/service-icon-4.png" alt="">
-                              </div>
-                              <div class="tp-service-content">
-                                 <h4 class="tp-service-title-sm"><a href="service-details.html">BRAND STRATEGY</a></h4>
-                                 <p>Dolor magna eget est lorem ipsum dolor sit amet consectetur. Bibendum
-                                    est ultricies integer quis auctor elit sed.</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- service area end -->
-
-            <!-- project area start -->
-            <div class="tp-project-area fix">
-               <div class="container-fluid p-0">
-                  <div class="row g-0">
-                     <div class="col-xl-12">
-                        <div class="tp-project-textline tp-project-effect mb-115" data-scrub="0.0001">
-                           <span class="textline-1">Co<span><img src="assets/img/home-01/project/project-shape-1-1.png"
-                                    alt=""></span>lest</span><span class="textline-2">Project</span>
-                           <span class="textline-1">Co<span><img src="assets/img/home-01/project/project-shape-1-1.png"
-                                    alt=""></span>lest</span><span class="textline-2">Project</span>
-                           <span class="textline-1">Co<span><img src="assets/img/home-01/project/project-shape-1-1.png"
-                                    alt=""></span>lest</span><span class="textline-2">Project</span>
-                           <span class="textline-1">Co<span><img src="assets/img/home-01/project/project-shape-1-1.png"
-                                    alt=""></span>lest</span><span class="textline-2">Project</span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="tp-project-gallery-wrapper">
-                  <div class="container container-1630">
-                     <div class="tp-project-gallery-top pb-50">
-                        <div class="row">
-                           <div class="col-xl-6 col-lg-6 col-md-6">
-                              <div class="tp-project-left-wrap">
-                                 <div class="tp-project-item tp-project-mr mb-200">
-                                    <div class="tp-project-img height-1 fix not-hide-cursor" data-cursor="View<br>Demo">
-                                       <a class="cursor-hide" href="portfolio-details-3.html"><img class="w-100"
-                                             data-speed=".8" src="assets/img/home-01/project/project-1-1.jpg"
-                                             alt=""></a>
-                                    </div>
-                                 </div>
-                                 <div class="tp-project-item text-end mb-200">
-                                    <div
-                                       class="tp-project-img height-2 d-inline-flex justify-content-end fix not-hide-cursor"
-                                       data-cursor="View<br>Demo">
-                                       <a class="cursor-hide" href="portfolio-details-3.html"><img data-speed=".8"
-                                             src="assets/img/home-01/project/project-1-2.jpg" alt=""></a>
-                                    </div>
-                                 </div>
-                                 <div class="tp-project-item tp-project-mr mb-200">
-                                    <div class="tp-project-img height-3 fix not-hide-cursor" data-cursor="View<br>Demo">
-                                       <a class="cursor-hide" href="portfolio-details-3.html"><img class="w-100"
-                                             data-speed=".8" src="assets/img/home-01/project/project-1-3.jpg"
-                                             alt=""></a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-xl-6 col-lg-6 col-md-6">
-                              <div class="tp-project-right-wrap">
-                                 <div class="tp-project-item mb-200">
-                                    <div class="tp-project-img height-4 fix not-hide-cursor" data-cursor="View<br>Demo">
-                                       <a class="cursor-hide" href="portfolio-details-3.html"><img data-speed=".8"
-                                             src="assets/img/home-01/project/project-1-4.jpg" alt=""></a>
-                                    </div>
-                                 </div>
-                                 <div class="tp-project-item tp-project-ml mb-200">
-                                    <div class="tp-project-img height-5 fix not-hide-cursor" data-cursor="View<br>Demo">
-                                       <a class="cursor-hide" href="portfolio-details-3.html"><img data-speed=".8"
-                                             src="assets/img/home-01/project/project-1-5.jpg" alt=""></a>
-                                    </div>
-                                 </div>
-                                 <div class="tp-project-item mb-200">
-                                    <div class="tp-project-img height-6 fix not-hide-cursor" data-cursor="View<br>Demo">
-                                       <a class="cursor-hide" href="portfolio-details-3.html"><img class="w-100"
-                                             data-speed=".8" src="assets/img/home-01/project/project-1-6.jpg"
-                                             alt=""></a>
-                                    </div>
-                                 </div>
-                                 <div class="tp-project-btn tp-btn-trigger">
-                                    <div class="tp-btn-bounce">
-                                       <a class="tp-btn-border" href="portfolio-grid-col-3.html">
-                                          <span class="tp-btn-border-wrap">
-                                             <span class="text-1">View all projects</span>
-                                             <span class="text-2">View all projects</span>
-                                          </span>
-                                       </a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="container-fluid p-0">
-                     <div class="row g-0">
-                        <div class="col-xl-12">
-                           <div class="tp-project-full-img-wrap p-relative fix">
-                              <div class="tp-project-full-img" data-speed="auto"
-                                 data-background="assets/img/inner-service/hero/hero-1-2.jpg"></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- project area end -->
-
-            <!-- award area start -->
-            <div class="tp-award-area pt-125 pb-125">
-               <div class="container container-1630">
-                  <div class="row">
-                     <div class="col-xxl-6 col-xl-7">
-                        <div class="tp-award-title-box">
-                           <h4 class="tp-section-title tp-char-animation">Awards <br> <span>& Recognitions</span></h4>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-xl-4 col-lg-4 col-md-12">
-                        <div class="tp-award-list-thumb-wrap p-relative">
-                           <div id="tp-award-thumb" class="tp-award-list-thumb-1">
-                              <img class="tp-award-list-thumb-1" src="assets/img/home-01/award/award-1.png" alt="">
-                              <img class="tp-award-list-thumb-2" src="assets/img/home-01/award/award-2.png" alt="">
-                              <img class="tp-award-list-thumb-3" src="assets/img/home-01/award/award-3.png" alt="">
-                              <img class="tp-award-list-thumb-4" src="assets/img/home-01/award/award-4.png" alt="">
-                              <img class="tp-award-list-thumb-5" src="assets/img/home-01/award/award-5.png" alt="">
-                              <img class="tp-award-list-thumb-6" src="assets/img/home-01/award/award-6.png" alt="">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-xl-8 col-lg-8 col-md-12">
-                        <div class="tp-award-list-wrap">
-                           <div
-                              class="tp-award-list-item d-flex align-items-center justify-content-between active tp_fade_bottom"
-                              rel="tp-award-list-thumb-1">
-                              <div class="tp-award-list-content-left d-flex align-items-center">
-                                 <span>x2</span>
-                                 <p>FWA, Site of the Day</p>
-                              </div>
-                              <div class="tp-award-list-content-right">
-                                 <span>Jun 24, 2024</span>
-                              </div>
-                           </div>
-                           <div
-                              class="tp-award-list-item d-flex align-items-center justify-content-between tp_fade_bottom"
-                              rel="tp-award-list-thumb-2">
-                              <div class="tp-award-list-content-left d-flex align-items-center">
-                                 <span>x3</span>
-                                 <p>Awwwards Interior Excellence</p>
-                              </div>
-                              <div class="tp-award-list-content-right">
-                                 <span>Nov 24, 2022</span>
-                              </div>
-                           </div>
-                           <div
-                              class="tp-award-list-item d-flex align-items-center justify-content-between tp_fade_bottom"
-                              rel="tp-award-list-thumb-3">
-                              <div class="tp-award-list-content-left d-flex align-items-center">
-                                 <span>x1</span>
-                                 <p>Loki boundary pushing year in Review 2022</p>
-                              </div>
-                              <div class="tp-award-list-content-right">
-                                 <span>Jun 11, 2012</span>
-                              </div>
-                           </div>
-                           <div
-                              class="tp-award-list-item d-flex align-items-center justify-content-between tp_fade_bottom"
-                              rel="tp-award-list-thumb-4">
-                              <div class="tp-award-list-content-left d-flex align-items-center">
-                                 <span>x2</span>
-                                 <p>The New Liko Tools Website is Live.</p>
-                              </div>
-                              <div class="tp-award-list-content-right">
-                                 <span>Sep 26, 2021</span>
-                              </div>
-                           </div>
-                           <div
-                              class="tp-award-list-item d-flex align-items-center justify-content-between tp_fade_bottom"
-                              rel="tp-award-list-thumb-5">
-                              <div class="tp-award-list-content-left d-flex align-items-center">
-                                 <span>x2</span>
-                                 <p>Digital Agencies Worldwide</p>
-                              </div>
-                              <div class="tp-award-list-content-right">
-                                 <span>Jun 24, 2021</span>
-                              </div>
-                           </div>
-                           <div
-                              class="tp-award-list-item d-flex align-items-center justify-content-between tp_fade_bottom"
-                              rel="tp-award-list-thumb-6">
-                              <div class="tp-award-list-content-left d-flex align-items-center">
-                                 <span>x1</span>
-                                 <p>FWA, Site of the Day</p>
-                              </div>
-                              <div class="tp-award-list-content-right">
-                                 <span>Aug 21, 2021</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- award area end -->
-
-            <!-- team area start -->
-            <div class="tp-team-area  pt-20 pb-120 fix">
-               <div class="container-fluid">
-                  <div class="row">
-                     <div class="col-xl-12">
-                        <div class="tp-team-slider-wrapper">
-                           <div class="swiper-container tp-team-slider-active">
-                              <div class="swiper-wrapper">
-                                 <div class="swiper-slide">
-                                    <div class="tp-team-item tp-hover-btn-wrapper marque fix mb-30">
-                                       <div class="tp-hover-btn-item">
-                                          <img src="assets/img/home-01/team/team-1-1.jpg" alt="">
-                                       </div>
-                                       <div class="tp-team-content">
-                                          <span>Art direction</span>
-                                          <h4 class="tp-team-title-sm" data-bs-toggle="modal"
-                                             data-bs-target="#exampleModal"><a href="void:javascript(0)">JANE MILLS</a>
-                                          </h4>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <div class="tp-team-item tp-hover-btn-wrapper marque fix mb-30">
-                                       <div class="tp-hover-btn-item">
-                                          <img src="assets/img/home-01/team/team-1-2.jpg" alt="">
-                                       </div>
-                                       <div class="tp-team-content">
-                                          <span>Art direction</span>
-                                          <h4 class="tp-team-title-sm" data-bs-toggle="modal"
-                                             data-bs-target="#exampleModal"><a href="void:javascript(0)">JIMathis</a>
-                                          </h4>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <div class="tp-team-item tp-hover-btn-wrapper marque fix mb-30">
-                                       <div class="tp-hover-btn-item">
-                                          <img src="assets/img/home-01/team/team-1-3.jpg" alt="">
-                                       </div>
-                                       <div class="tp-team-content">
-                                          <span>Art direction</span>
-                                          <h4 class="tp-team-title-sm" data-bs-toggle="modal"
-                                             data-bs-target="#exampleModal"><a href="void:javascript(0)">Randolph</a>
-                                          </h4>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <div class="tp-team-item tp-hover-btn-wrapper marque fix mb-30">
-                                       <div class="tp-hover-btn-item">
-                                          <img src="assets/img/home-01/team/team-1-4.jpg" alt="">
-                                       </div>
-                                       <div class="tp-team-content">
-                                          <span>Art direction</span>
-                                          <h4 class="tp-team-title-sm" data-bs-toggle="modal"
-                                             data-bs-target="#exampleModal"><a href="void:javascript(0)">Mullins</a>
-                                          </h4>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <div class="tp-team-item tp-hover-btn-wrapper marque fix mb-30">
-                                       <div class="tp-hover-btn-item">
-                                          <img src="assets/img/home-01/team/team-1-5.jpg" alt="">
-                                       </div>
-                                       <div class="tp-team-content">
-                                          <span>Art direction</span>
-                                          <h4 class="tp-team-title-sm" data-bs-toggle="modal"
-                                             data-bs-target="#exampleModal"><a href="void:javascript(0)">Minor</a></h4>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <div class="tp-team-item tp-hover-btn-wrapper marque fix mb-30">
-                                       <div class="tp-hover-btn-item">
-                                          <img src="assets/img/home-01/team/team-1-2.jpg" alt="">
-                                       </div>
-                                       <div class="tp-team-content">
-                                          <span>Art direction</span>
-                                          <h4 class="tp-team-title-sm" data-bs-toggle="modal"
-                                             data-bs-target="#exampleModal"><a href="void:javascript(0)">Lucas</a></h4>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <div class="tp-team-item tp-hover-btn-wrapper marque fix mb-30">
-                                       <div class="tp-hover-btn-item">
-                                          <img src="assets/img/home-01/team/team-1-3.jpg" alt="">
-                                       </div>
-                                       <div class="tp-team-content">
-                                          <span>Art direction</span>
-                                          <h4 class="tp-team-title-sm" data-bs-toggle="modal"
-                                             data-bs-target="#exampleModal"><a href="void:javascript(0)">JDeborah</a>
-                                          </h4>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- team area end -->
-
-            <!-- testimonial area start -->
-            <div class="tp-testimonial-area pb-120">
-               <div class="container">
-                  <div class="row justify-content-center">
-                     <div class="col-xl-10">
-                        <div class="tp-testimonial-slider-wrapper p-relative">
-                           <div class="tp-testimonial-arrow-box d-none d-lg-block">
-                              <button class="tp-testimonial-prev">
-                                 <span>
-                                    <svg width="20" height="17" viewBox="0 0 20 17" fill="none"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M19.3335 8.63672H1.3335" stroke="currentcolor" stroke-width="1.5"
-                                          stroke-miterlimit="10" />
-                                       <path d="M8.42188 0.69043C8.42188 5.08274 4.65513 8.63691 0.000114646 8.63691"
-                                          stroke="currentcolor" stroke-width="1.5" stroke-miterlimit="10" />
-                                       <path d="M0.000114646 8.63672C4.65513 8.63672 8.42188 12.1909 8.42188 16.5832"
-                                          stroke="currentcolor" stroke-width="1.5" stroke-miterlimit="10" />
-                                    </svg>
-                                 </span>
-                              </button>
-                              <button class="tp-testimonial-next">
-                                 <span>
-                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M0.666504 8H18.6665" stroke="currentcolor" stroke-width="1.5"
-                                          stroke-miterlimit="10" />
-                                       <path d="M11.5781 0C11.5781 4.42189 15.3449 8 19.9999 8" stroke="currentcolor"
-                                          stroke-width="1.5" stroke-miterlimit="10" />
-                                       <path d="M19.9999 8C15.3449 8 11.5781 11.5781 11.5781 16" stroke="currentcolor"
-                                          stroke-width="1.5" stroke-miterlimit="10" />
-                                    </svg>
-                                 </span>
-                              </button>
-                           </div>
-                           <div class="swiper-container tp-testimonial-slider-active fix">
-                              <div class="swiper-wrapper">
-                                 <div class="swiper-slide">
-                                    <div class="tp-testimonial-item text-center">
-                                       <p>
-                                          “Nulla ut enim non magna placerat scelerisque sed eu dolor. Sed eu faucibus
-                                          turpis.
-                                          Ut bibendum tempor tempus. Ut scelerisque est
-                                          posuere ex pretium laoreet.”
-                                       </p>
-                                       <span><em>Louis Fantun</em> - Designer</span>
-                                    </div>
-                                 </div>
-                                 <div class="swiper-slide">
-                                    <div class="tp-testimonial-item text-center">
-                                       <p>
-                                          “Nulla ut enim non magna placerat scelerisque sed eu dolor. Sed eu faucibus
-                                          turpis.
-                                          Ut bibendum tempor tempus. Ut scelerisque est
-                                          posuere ex pretium laoreet.”
-                                       </p>
-                                       <span><em>Louis Fantun</em> - Designer</span>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- testimonial area end -->
-
          </main>
 
          <footer>
 
             <!-- footer area start -->
-            <div class="tp-footer-area black-bg pt-90">
-               <div class="container-fluid">
-                  <div class="tp-footer-wrap">
-                     <div class="row align-items-end">
-                        <div class="col-xl-5 col-lg-6">
-                           <div class="tp-footer-menu menu-anim">
-                              <ul class="counter-row tp-text-anim">
-                                 <li class="active"><a href="portfolio-details-1.html">Projects</a></li>
-                                 <li class="active"><a href="service.html">What we do</a></li>
-                                 <li class="active"><a href="about-us.html">About</a></li>
-                                 <li class="active"><a href="blog-modern.html">Blog</a></li>
-                                 <li class="active"><a href="contact.html">Contact</a></li>
-                              </ul>
-                           </div>
-                        </div>
-                        <div class="col-xl-5 col-lg-6">
-                           <div class="tp-footer-middle-wrap">
-                              <div class="tp-footer-content">
-                                 <h4 class="tp-footer-big-title footer-big-text">Let's Contact!</h4>
+            <div class="tp-footer-6-area black-bg pt-100">
+               <div class="container container-1300">
+                  <div class="tp-footer-6-widget-wrap">
+                     <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-60">
+                           <div class="tp-footer-6-widget footer-col-6-1">
+                              <div class="tp-footer-6-logo">
+                                 <a href="index.html"><img src="assets/img/logo/logo-white.png" alt=""></a>
                               </div>
-                              <div class="row">
-                                 <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <div class="tp-footer-widget">
-                                       <h4 class="tp-footer-title tp_fade_bottom">Say hello at:</h4>
-                                       <div class="tp-footer-widget-info">
-                                          <div class="tp-footer-widget-info-mail tp_fade_bottom">
-                                             <a href="mailto:contact@agency.com">contact@agency.com</a>
-                                          </div>
-                                          <div class="tp-footer-widget-info-location tp_fade_bottom">
-                                             <a href="https://www.google.com/maps/@54.581385,-101.7562167,7.5z?entry=ttu"
-                                                target="_blank">389 Street St. <br> San Francisco,CA</a>
-                                          </div>
-                                       </div>
+                              <div class="tp-footer-6-talk">
+                                 <span>Got Questions? Call us</span>
+                                 <h4><a href="tel:+67041390762">+670 413 90 762</a></h4>
+                              </div>
+                              <div class="tp-footer-6-contact">
+                                 <div class="tp-footer-6-contact-item d-flex align-items-start">
+                                    <div class="tp-footer-6-contact-icon">
+                                       <span>
+                                          <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M1 5C1 2.2 2.6 1 5 1H13C15.4 1 17 2.2 17 5V10.6C17 13.4 15.4 14.6 13 14.6H5"
+                                                stroke="white" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                             <path
+                                                d="M13 5.40027L10.496 7.40003C9.672 8.05595 8.32 8.05595 7.496 7.40003L5 5.40027"
+                                                stroke="white" stroke-width="1.5" stroke-miterlimit="10"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                             <path d="M1 11.4003H5.8" stroke="white" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                             <path d="M1 8.19946H3.4" stroke="white" stroke-width="1.5"
+                                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                          </svg>
+                                       </span>
+                                    </div>
+                                    <div class="tp-footer-6-contact-content">
+                                       <a href="mailto:liko@gmail.com">liko@gmail.com</a>
                                     </div>
                                  </div>
-                                 <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <div class="tp-footer-widget">
-                                       <h4 class="tp-footer-title tp_fade_bottom">Stalk us</h4>
-                                       <ul class="tp-footer-widget-social">
-                                          <li class="tp_fade_bottom"><a href="#">Facebook</a></li>
-                                          <li class="tp_fade_bottom"><a href="#">Instagram</a></li>
-                                          <li class="tp_fade_bottom"><a href="#">Behance</a></li>
-                                          <li class="tp_fade_bottom"><a href="#">Dribbble</a></li>
-                                       </ul>
+                                 <div class="tp-footer-6-contact-item d-flex align-items-start">
+                                    <div class="tp-footer-6-contact-icon">
+                                       <span>
+                                          <svg width="17" height="20" viewBox="0 0 17 20" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M8.50086 10.9417C9.99963 10.9417 11.2146 9.72668 11.2146 8.22791C11.2146 6.72915 9.99963 5.51416 8.50086 5.51416C7.0021 5.51416 5.78711 6.72915 5.78711 8.22791C5.78711 9.72668 7.0021 10.9417 8.50086 10.9417Z"
+                                                stroke="white" stroke-width="1.5" />
+                                             <path
+                                                d="M1.21115 6.64496C2.92464 -0.887449 14.0841 -0.878751 15.7889 6.65366C16.7891 11.0722 14.0406 14.8123 11.6313 17.126C9.88298 18.8134 7.11704 18.8134 5.36006 17.126C2.95943 14.8123 0.210885 11.0635 1.21115 6.64496Z"
+                                                stroke="white" stroke-width="1.5" />
+                                          </svg>
+                                       </span>
                                     </div>
+                                    <div class="tp-footer-6-contact-content">
+                                       <a href="https://www.google.com/maps" target="_blank">79 Sleepy Hollow
+                                          St.<br>Jamaica, New York 1432</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-60">
+                           <div class="tp-footer-6-widget footer-col-6-2">
+                              <h4 class="tp-footer-6-widget-title">Category</h4>
+                              <div class="tp-footer-6-list">
+                                 <ul>
+                                    <li><a href="#">Our Story</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Latest News</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-4 col-md-6 col-sm-4 mb-60">
+                           <div class="tp-footer-6-widget footer-col-6-3">
+                              <h4 class="tp-footer-6-widget-title">My Account</h4>
+                              <div class="tp-footer-6-list">
+                                 <ul>
+                                    <li><a href="#">Track Orders</a></li>
+                                    <li><a href="#">Shipping</a></li>
+                                    <li><a href="#">Wishlist</a></li>
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Order History</a></li>
+                                    <li><a href="#">Returns</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 mb-60">
+                           <div class="tp-footer-6-widget footer-col-6-4">
+                              <h4 class="tp-footer-6-widget-title">Subcribe.</h4>
+                              <div class="tp-footer-6-input-box">
+                                 <form action="#">
+                                    <label>Our conversation is just getting started</label>
+                                    <div class="tp-footer-6-input p-relative">
+                                       <input type="text" placeholder="Enter Your Email">
+                                       <button class="tp-btn-subscribe" type="submit">Subscribe</button>
+                                    </div>
+                                 </form>
+                              </div>
+                              <div class="tp-footer-6-social-box">
+                                 <h4 class="tp-footer-6-social-title">Follow Us On</h4>
+                                 <div class="tp-footer-6-social">
+                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fa-brands fa-vimeo-v"></i></a>
                                  </div>
                               </div>
                            </div>
@@ -1230,43 +1233,30 @@
                      </div>
                   </div>
                </div>
-               <!-- footer area end -->
-
-               <!-- copyright area start -->
-               <div class="container-fluid">
-                  <div class="tp-copyright-wrap">
+               <div class="tp-copyright-2-area tp-copyright-2-bdr-top black-bg">
+                  <div class="container container-1300">
                      <div class="row align-items-center">
-                        <div class="col-xl-6 col-md-4">
-                           <div class="tp-copyright-logo text-center text-md-start">
-                              <a href="index.html"><img src="assets/img/logo/logo-white.png" alt=""></a>
+                        <div class="col-xl-4 col-lg-5 col-md-6">
+                           <div class="tp-copyright-2-left text-center text-md-start">
+                              <p class="mb-0">All rights reserved — 2024 © Themepure</p>
                            </div>
                         </div>
-                        <div class="col-xl-6 col-md-8">
-                           <div class="tp-copyright-text text-center text-md-end">
-                              <p>Copyright © 2024 Themepure. All rights reserved.</p>
+                        <div class="col-xl-8 col-lg-7 col-md-6">
+                           <div class="tp-copyright-2-payment text-center text-md-end">
+                              <a href="#">
+                                 <img src="assets/img/inner-shop/payment.png" alt="">
+                              </a>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
-               <!-- copyright area end -->
-
             </div>
-            <!-- footer area start -->
+            <!-- footer area end -->
 
          </footer>
 
       </div>
-   </div>
-
-   <div class="tp-footer-shape-wrap z-index-5 smooth">
-      <a href="contact.html">
-         <div class="tp-footer-shape p-relative">
-            <img class="img-1" src="assets/img/home-01/footer/footer-circle-shape-1.png" alt="">
-            <img class="img-2" src="assets/img/home-01/footer/footer-circle-shape-2.png" alt="">
-            <span></span>
-         </div>
-      </a>
    </div>
 
 
