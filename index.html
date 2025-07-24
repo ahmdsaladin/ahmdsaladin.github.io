@@ -387,21 +387,11 @@
             <!-- hero area end -->
 
             <!-- gallery area start -->
-            <div class="tp-gallery-area fix p-relative pt-120">
-               <div class="tp-gallery-shape-1">
-                  <img class="img-1" src="assets/img/home-03/gallery/gal-shape-1.png" alt="">
-                  <img class="img-2" src="assets/img/home-03/gallery/gal-shape-dark-1.png" alt="">
-               </div>
-               <div class="tp-gallery-shape-2">
-                  <img class="img-1" src="assets/img/home-03/gallery/gal-shape-2.png" alt="">
-                  <img class="img-2" src="assets/img/home-03/gallery/gal-shape-dark-2.png" alt="">
-               </div>
+            <div class="circular-gallery pt-120">
                <div class="container-fluid">
                   <div class="row">
                      <div class="col-xl-12">
-                        <div class="tp-gallery-slider-wrap">
-                           <div class="swiper-container tp-gallery-slider-active">
-                              <div class="swiper-wrapper tp-gallery-titming">
+                        <div id="gallery-container">
                                  <div class="swiper-slide">
                                     <div class="tp-gallery-item">
                                        <img src="assets/img/home-03/gallery/gal-1.jpg" alt="">
@@ -1006,6 +996,27 @@
    <script src="assets/js/main.js"></script>
    <script src="assets/js/tp-cursor.js"></script>
 
+   <!-- Circular Gallery -->
+   <link rel="stylesheet" href="assets/css/circular-gallery.css">
+   <script type="module" src="assets/js/circular-gallery.js"></script>
+   <script>
+     document.addEventListener('DOMContentLoaded', () => {
+       const container = document.getElementById('gallery-container');
+       const gallery = new CircularGallery(container, {
+         bend: 3,
+         textColor: "#ffffff",
+         borderRadius: 0.05,
+         scrollEase: 0.02,
+         items: [
+           { image: "assets/img/home-03/gallery/gal-1.jpg", text: "Project 1" },
+           { image: "assets/img/home-03/gallery/gal-2.jpg", text: "Project 2" },
+           { image: "assets/img/home-03/gallery/gal-3.jpg", text: "Project 3" },
+           { image: "assets/img/home-03/gallery/gal-4.jpg", text: "Project 4" },
+           { image: "assets/img/home-03/gallery/gal-5.jpg", text: "Project 5" }
+         ]
+       });
+     });
+   </script>
 
 </body>
 
