@@ -1,8 +1,80 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+<!DOCTYPE html>
+<html lang="zxx" dir="ltr">
 
 <head>
-   <meta charset="utf-8">
+   <meta charset="utf-8" />
+   <meta http-equiv="x-ua-compatible" content="ie=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+   <!-- Essential Meta Tags -->
+   <meta name="author" content="Ahmd Saladin" />
+   <meta name="keywords" content="designer, portfolio, creative agency, UI/UX, branding" />
+   <meta name="description" content="A creative portfolio website for Ahmd Saladin showcasing his design work and services." />
+   
+   <!-- Accessibility Enhancements -->
+   <meta name="theme-color" content="#ffffff">
+   <meta name="format-detection" content="telephone=no">
+   
+   <!-- Custom CSS Variables -->
+   <style>
+       :root {
+           --primary-color: #007bff;
+           --secondary-color: #6c757d;
+           --text-color: #333;
+           --transition: all 0.3s ease;
+       }
+   </style>
+   
+   <!-- Navigation -->
+   <nav class="tp-header-menu header-main-menu text-center">
+       <button class="tp-main-menu-mobile d-xl-none" aria-label="Toggle navigation menu">
+           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/>
+           </svg>
+       </button>
+       <div class="tp-header-menu-content" aria-expanded="false">
+           <ul class="tp-main-menu-content" role="navigation" aria-label="Main navigation">
+               <li><a href="index.html" aria-label="Home">Home</a></li>
+               <li><a href="about-me.html" aria-label="About Me">About Me</a></li>
+               <li class="has-dropdown" aria-haspopup="true" aria-label="Portfolio dropdown">
+                   <a href="blog-list.html" aria-label="Portfolio">Portfolio</a>
+                   <ul class="tp-submenu submenu" role="none" aria-label="Portfolio submenu">
+                       <li><a href="blog-modern.html" aria-label="Posters">Posters</a></li>
+                       <li><a href="blog-classic.html" aria-label="Products">Products</a></li>
+                       <li><a href="blog-list.html" aria-label="Logos">Logos</a></li>
+                       <li><a href="blog-details.html" aria-label="Graphics">Graphics</a></li>
+                       <li><a href="blog-details.html" aria-label="Branding">Branding</a></li>
+                       <li><a href="blog-details-without-sidebar.html" aria-label="UX/UI">UX/UI</a></li>
+                   </ul>
+               </li>
+               <li><a href="blog-modern.html" aria-label="Blog">Blog</a></li>
+               <li><a href="contact-2.html" aria-label="Contact">Contact</a></li>
+               <li><a href="https://drive.google.com/file/d/1YPDsEdcel0mPjrtLRmGvpnflmzpA_upN/view?usp=sharing" target="_blank" aria-label="Resume">Resume</a></li>
+           </ul>
+       </div>
+   </nav>
+   
+   <!-- CSS Styles -->
+   <link rel="stylesheet" href="assets/css/bootstrap.css">
+   <link rel="stylesheet" href="assets/css/animate.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/custom-animation.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+   
+   <!-- Favicons -->
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+   <link rel="apple-touch-icon" href="assets/img/favicon.png">
+   
+   <title>
+       Liko - Creative agency & portfolio HTML Template
+   </title>
+</head>
+
+<body id="body" class="tp-magic-cursor">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
    <title>Liko - Creative agency & portfolio HTML Template</title>
    <meta name="description" content="">
@@ -164,13 +236,13 @@
    <header class="tp-header-height">
 
       <!-- header top area start -->
-      <div id="header-sticky" class="tp-header-area tp-header-mob-space tp-transparent pl-60 pr-60 z-index-9">
-         <div class="container">
+      <div id="header-sticky" class="tp-header-area tp-header-mob-space tp-transparent pl-60 pr-60 z-index-9" aria-label="Navigation container">
+         <div class="container" role="navigation" aria-label="Main navigation">
             <div class="row align-items-center">
                <div class="col-xl-2 col-lg-2 col-6">
-                  <div class="tp-header-logo">
-                     <a class="logo-1" href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                     <a class="logo-2" href="index.html"><img src="assets/img/logo/logo-white.png" alt=""></a>
+                  <div class="tp-header-logo" aria-label="Logo section">
+                     <a class="logo-1" href="index.html"><img src="assets/img/logo/logo.png" alt="Main logo" aria-hidden="true"></a>
+                     <a class="logo-2" href="index.html"><img src="assets/img/logo/logo-white.png" alt="White logo" aria-hidden="true"></a>
                   </div>
                </div>
                <div class="col-xl-8 col-lg-9 d-none d-xl-block">
@@ -702,48 +774,40 @@
             </div>
             <!-- award area end -->
             <!-- testimonial area start -->
-            <div class="tp-testimonial-area pb-120">
+            <section class="tp-testimonial-area pb-120" aria-label="Client Testimonials">
                <div class="container">
                   <div class="row justify-content-center">
                      <div class="col-xl-10">
-                        <div class="tp-testimonial-slider-wrapper p-relative">
-                           <div class="tp-testimonial-arrow-box d-none d-lg-block">
-                              <button class="tp-testimonial-prev">
-                                 <span>
-                                    <svg width="20" height="17" viewBox="0 0 20 17" fill="none"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M19.3335 8.63672H1.3335" stroke="currentcolor" stroke-width="1.5"
-                                          stroke-miterlimit="10" />
-                                       <path d="M8.42188 0.69043C8.42188 5.08274 4.65513 8.63691 0.000114646 8.63691"
-                                          stroke="currentcolor" stroke-width="1.5" stroke-miterlimit="10" />
-                                       <path d="M0.000114646 8.63672C4.65513 8.63672 8.42188 12.1909 8.42188 16.5832"
-                                          stroke="currentcolor" stroke-width="1.5" stroke-miterlimit="10" />
-                                    </svg>
-                                 </span>
+                        <div class="tp-testimonial-slider-wrapper p-relative" role="region">
+                           <div class="tp-testimonial-arrow-box d-none d-lg-block" role="navigation">
+                              <button class="tp-testimonial-prev" aria-label="Previous testimonial">
+                                 <svg width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.3335 8.63672H1.3335" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
+                                    <path d="M8.42188 0.69043C8.42188 5.08274 4.65513 8.63691 0.000114646 8.63691" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
+                                    <path d="M0.000114646 8.63672C4.65513 8.63672 8.42188 12.1909 8.42188 16.5832" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
+                                 </svg>
                               </button>
-                              <button class="tp-testimonial-next">
-                                 <span>
-                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M0.666504 8H18.6665" stroke="currentcolor" stroke-width="1.5"
-                                          stroke-miterlimit="10" />
-                                       <path d="M11.5781 0C11.5781 4.42189 15.3449 8 19.9999 8" stroke="currentcolor"
-                                          stroke-width="1.5" stroke-miterlimit="10" />
-                                       <path d="M19.9999 8C15.3449 8 11.5781 11.5781 11.5781 16" stroke="currentcolor"
-                                          stroke-width="1.5" stroke-miterlimit="10" />
-                                    </svg>
-                                 </span>
+                              <button class="tp-testimonial-next" aria-label="Next testimonial">
+                                 <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.666504 8H18.6665" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
+                                    <path d="M11.5781 0C11.5781 4.42189 15.3449 8 19.9999 8" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
+                                    <path d="M19.9999 8C15.3449 8 11.5781 11.5781 11.5781 16" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" />
+                                 </svg>
                               </button>
                            </div>
-                           <div class="swiper-container tp-testimonial-slider-active fix">
+                           <div class="swiper-container tp-testimonial-slider-active fix" aria-live="polite">
                               <div class="swiper-wrapper">
                                  <div class="swiper-slide">
-                                    <div class="tp-testimonial-item text-center">
-    <p>
-      “Ahmed didn’t just design my logo — he captured the soul of my brand. Every detail had clarity, balance, and feeling.”
-    </p>
-    <span><em>Salma Rashed</em> – Founder, Malica Babywear</span>
-  </div>
+                                    <article class="testimonial-item">
+                                        <div class="tp-testimonial-item text-center">
+                                            <blockquote>
+                                                <p>“Ahmed didn’t just design my logo — he captured the soul of my brand. Every detail had clarity, balance, and feeling.”</p>
+                                            </blockquote>
+                                            <footer>
+                                                <span class="testimonial-author"><em>Salma Rashed</em> – Founder, Malica Babywear</span>
+                                            </footer>
+                                        </div>
+                                    </article>
 </div>
 <div class="swiper-slide">
   <div class="tp-testimonial-item text-center">
