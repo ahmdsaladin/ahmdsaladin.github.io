@@ -1,17 +1,61 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="zxx" dir="rtl">
 
 <head>
-   <meta charset="utf-8">
-   <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <title>Ahmd Saladin</title>
-   <meta name="description" content="">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-   <!-- Place favicon.ico in the root directory -->
-   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-
-   <!-- CSS here -->
+   <meta charset="utf-8" />
+   <meta http-equiv="x-ua-compatible" content="ie=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+   <!-- Essential Meta Tags -->
+   <meta name="author" content="Ahmd Saladin" />
+   <meta name="keywords" content="designer, portfolio, creative agency, UI/UX, branding" />
+   <meta name="description" content="A creative portfolio website for Ahmd Saladin showcasing his design work and services." />
+   
+   <!-- Accessibility Enhancements -->
+   <meta name="theme-color" content="#ffffff">
+   <meta name="format-detection" content="telephone=no">
+   
+   <!-- Custom CSS Variables -->
+   <style>
+       :root {
+           --primary-color: #007bff;
+           --secondary-color: #6c757d;
+           --text-color: #333;
+           --transition: all 0.3s ease;
+       }
+   </style>
+   
+   <!-- Navigation -->
+   <nav class="tp-header-menu header-main-menu text-center">
+       <button class="tp-main-menu-mobile d-xl-none" aria-label="Toggle navigation menu">
+           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/>
+           </svg>
+       </button>
+       <div class="tp-header-menu-content" aria-expanded="false">
+           <ul class="tp-main-menu-content" role="navigation" aria-label="Main navigation">
+               <li><a href="index.html" aria-label="Home">Home</a></li>
+               <li><a href="about-me.html" aria-label="About Me">About Me</a></li>
+               <li><a href="service.html" aria-label="About Me">Services</a></li>
+               <li class="has-dropdown" aria-haspopup="true" aria-label="Portfolio dropdown">
+                   <a href="blog-list.html" aria-label="Portfolio">Portfolio</a>
+                   <ul class="tp-submenu submenu" role="none" aria-label="Portfolio submenu">
+                       <li><a href="blog-modern.html" aria-label="Posters">Posters</a></li>
+                       <li><a href="blog-classic.html" aria-label="Products">Products</a></li>
+                       <li><a href="blog-list.html" aria-label="Logos">Logos</a></li>
+                       <li><a href="blog-details.html" aria-label="Graphics">Graphics</a></li>
+                       <li><a href="blog-details.html" aria-label="Branding">Branding</a></li>
+                       <li><a href="blog-details-without-sidebar.html" aria-label="UX/UI">UX/UI</a></li>
+                   </ul>
+               </li>
+               <li><a href="blog-modern.html" aria-label="Blog">Blog</a></li>
+               <li><a href="contact-2.html" aria-label="Contact">Contact</a></li>
+               <li><a href="https://drive.google.com/file/d/1YPDsEdcel0mPjrtLRmGvpnflmzpA_upN/view?usp=sharing" target="_blank" aria-label="Resume">Resume</a></li>
+           </ul>
+       </div>
+   </nav>
+   
+   <!-- CSS Styles -->
    <link rel="stylesheet" href="assets/css/bootstrap.css">
    <link rel="stylesheet" href="assets/css/animate.css">
    <link rel="stylesheet" href="assets/css/swiper-bundle.css">
@@ -21,24 +65,25 @@
    <link rel="stylesheet" href="assets/css/spacing.css">
    <link rel="stylesheet" href="assets/css/custom-animation.css">
    <link rel="stylesheet" href="assets/css/main.css">
+   
+   <!-- Favicons -->
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+   <link rel="apple-touch-icon" href="assets/img/favicon.png">
+   
+   <title>
+       Ahmd Saladin's Portfolio
+   </title>
 </head>
 
-<body id="body" class="tp-smooth-scroll">
-   <!--[if lte IE 9]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-      <![endif]-->
+<body id="body" class="tp-magic-cursor">
 
 
-   <!-- back to top start -->
-   <div class="back-to-top-wrapper">
-      <button id="back_to_top" type="button" class="back-to-top-btn">
-         <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-               stroke-linejoin="round" />
-         </svg>
-      </button>
+
+   <!-- Begin magic cursor -->
+   <div id="magic-cursor">
+      <div id="ball"></div>
    </div>
-   <!-- back to top end -->
+   <!-- End magic cursor -->
 
    <!-- tp-offcanvus-area-end -->
    <div class="tp-offcanvas-area">
@@ -64,7 +109,7 @@
          <div class="tp-offcanvas-main">
             <div class="tp-offcanvas-content">
                <h3 class="tp-offcanvas-title">Hello There!</h3>
-               <p>I transform ideas into living experiences.</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
             </div>
             <div class="tp-main-menu-mobile d-xl-none"></div>
             <div class="tp-offcanvas-gallery">
@@ -96,13 +141,13 @@
 
                <ul>
                   <li><a href="tel:+201069761060">+201069761060</a></li>
-                  <li><a href="mailto:sotahmed100@gmail.com">sotahmed100@gmail.com
-                  </a></li>
-                  <li><a href="#">Alexandria - Egypt</a></li>
+                  <li><a href="mailto:sotahmed100@gmil.com">sotahmed100@gmail.com</a></li>
+                  <li><a href="mailto:ahmdsaladin@icloud.com">ahmdsaladin@icloud.com</a></li>
+                  <li><a href="#">Alexandria, Egypt</a></li>
                </ul>
             </div>
             <div class="tp-offcanvas-social">
-               <h3 class="tp-offcanvas-title sm">Follow Me</h3>
+               <h3 class="tp-offcanvas-title sm">Follow Us</h3>
                <ul>
                   <li>
                      <a href="#">
@@ -164,6 +209,7 @@
       </div>
    </div>
    <div class="body-overlay"></div>
+   <!-- tp-offcanvus-area-end -->
    <header>
 
       <!-- header top area start -->
@@ -173,32 +219,328 @@
                <div class="row align-items-center">
                   <div class="col-xl-3 col-lg-6 col-md-6 col-6">
                      <div class="tp-header-logo tp-header-3-logo">
+                        <a class="logo-1" href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                        <a class="logo-2" href="index.html"><img src="assets/img/logo/logo-white.png" alt=""></a>
                      </div>
                   </div>
                   <div class="col-xl-6 col-lg-6 d-none d-xl-block">
-                     <div class="tp-header-3-menu-wrap text-center">
-                        <div class="tp-header-3-menu-box d-inline-flex align-items-center justify-content-between">
-                           <div class="tp-header-3-menu header-main-menu">
-                              <nav class="tp-main-menu-content">
-                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about-me.html">About Me</a></li>
-                                    <li class="has-dropdown">
-                                       <a href="blog-list.html">Portfolio</a>
-                                       <ul class="tp-submenu submenu">
-                                          <li><a href="blog-modern.html">Posters</a></li>
-                                          <li><a href="blog-classic.html">Products</a></li>
-                                          <li><a href="blog-list.html">Logos</a></li>
-                                          <li><a href="blog-details.html">Graphics</a></li>
-                                          <li><a href="blog-details.html">Branding</a></li>
-                                          <li><a href="blog-details-without-sidebar.html">UX/UI</a></li>
-                                       </ul>
+                     <div class="tp-header-menu header-main-menu text-center">
+                     </div>
+                                                <div class="row gx-25 row-cols-xl-6 row-cols-lg-2 row-cols-md-2 row-cols-1">
+                                                   <div class="col homemenu">
+                                                      <div class="homemenu-thumb-wrap mb-20">
+                                                         <div class="homemenu-thumb fix">
+                                                            <a href="index.html"><img src="assets/img/menu/white-version/home-1.jpg" alt=""></a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="homemenu-content text-center">
+                                                         <h4 class="homemenu-title">
+                                                            <a href="index.html">MAIN HOME</a>
+                                                         </h4>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col homemenu">
+                                                      <div class="homemenu-thumb-wrap mb-20">
+                                                         <div class="homemenu-thumb fix">
+                                                            <a href="index-2.html"><img src="assets/img/menu/white-version/home-2.jpg" alt=""></a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="homemenu-content text-center">
+                                                         <h4 class="homemenu-title">
+                                                            <a href="index-2.html">Fashion STUDIO</a>
+                                                         </h4>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col homemenu">
+                                                      <div class="homemenu-thumb-wrap mb-20">
+                                                         <div class="homemenu-thumb fix">
+                                                            <a href="index-4.html"><img src="assets/img/menu/white-version/home-3.jpg" alt=""></a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="homemenu-content text-center">
+                                                         <h4 class="homemenu-title">
+                                                            <a href="index-4.html">CREATIVE AGENCY</a>
+                                                         </h4>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col homemenu">
+                                                      <div class="homemenu-thumb-wrap mb-20">
+                                                         <div class="homemenu-thumb fix">
+                                                            <a href="index-3.html"><img src="assets/img/menu/white-version/home-4.jpg" alt=""></a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="homemenu-content text-center">
+                                                         <h4 class="homemenu-title">
+                                                            <a href="index-3.html">Digital Agency</a>
+                                                         </h4>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col homemenu">
+                                                      <div class="homemenu-thumb-wrap mb-20">
+                                                         <div class="homemenu-thumb fix">
+                                                            <a href="index-5.html"><img src="assets/img/menu/white-version/home-5.jpg" alt=""></a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="homemenu-content text-center">
+                                                         <h4 class="homemenu-title">
+                                                            <a href="index-5.html">DESIGN STUDIO</a>
+                                                         </h4>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col homemenu">
+                                                      <div class="homemenu-thumb-wrap mb-20">
+                                                         <div class="homemenu-thumb fix">
+                                                            <a href="index-shop.html"><img src="assets/img/menu/white-version/home-6.jpg" alt=""></a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="homemenu-content text-center">
+                                                         <h4 class="homemenu-title">
+                                                            <a href="index-shop.html">Minimal Shop</a>
+                                                         </h4>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col homemenu">
+                                                      <div class="homemenu-thumb-wrap mb-20">
+                                                         <div class="homemenu-thumb fix">
+                                                            <a href="index-8.html"><img src="assets/img/menu/white-version/home-7.jpg" alt=""></a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="homemenu-content text-center">
+                                                         <h4 class="homemenu-title">
+                                                            <a href="index-8.html">DESIGN STUDIO</a>
+                                                         </h4>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col homemenu">
+                                                      <div class="homemenu-thumb-wrap mb-20">
+                                                         <div class="homemenu-thumb fix">
+                                                            <a href="index-9.html"><img src="assets/img/menu/white-version/home-8.jpg" alt=""></a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="homemenu-content text-center">
+                                                         <h4 class="homemenu-title">
+                                                            <a href="index-9.html">showcase carousel</a>
+                                                         </h4>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col homemenu">
+                                                      <div class="homemenu-thumb-wrap mb-20">
+                                                         <div class="homemenu-thumb fix">
+                                                            <a href="index-10.html"><img src="assets/img/menu/white-version/home-9.jpg" alt=""></a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="homemenu-content text-center">
+                                                         <h4 class="homemenu-title">
+                                                            <a href="index-10.html">INTERACTIVE LINKS</a>
+                                                         </h4>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col homemenu">
+                                                      <div class="homemenu-thumb-wrap mb-20">
+                                                         <div class="homemenu-thumb fix">
+                                                            <a href="index-11.html"><img src="assets/img/menu/white-version/home-10.jpg" alt=""></a>
+                                                         </div>                                         
+                                                      </div>
+                                                      <div class="homemenu-content text-center">
+                                                         <h4 class="homemenu-title">
+                                                            <a href="index-11.html">wrapper slider</a>
+                                                         </h4>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col homemenu">
+                                                      <div class="homemenu-thumb-wrap mb-20">
+                                                         <div class="homemenu-thumb fix">
+                                                            <a href="portfolio-showcase-2.html"><img src="assets/img/menu/white-version/home-11.jpg" alt=""></a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="homemenu-content text-center">
+                                                         <h4 class="homemenu-title">
+                                                            <a href="portfolio-showcase-2.html">showcase parallax</a>
+                                                         </h4>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col homemenu">
+                                                      <div class="homemenu-thumb-wrap mb-20">
+                                                         <div class="homemenu-thumb fix">
+                                                            <a href="index-12.html"><img src="assets/img/menu/white-version/home-12.jpg" alt=""></a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="homemenu-content text-center">
+                                                         <h4 class="homemenu-title">
+                                                            <a href="index-12.html">horizontal</a>
+                                                         </h4>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
                                     </li>
-                                    <li><a href="blog-modern.html">Blog</a>
-                                    <li><a href="contact-2.html">Contact</a></li>
-                                    <li><a href="https://drive.google.com/file/d/1YPDsEdcel0mPjrtLRmGvpnflmzpA_upN/view?usp=sharing">Resume</a></li>
+                                    <li class="has-dropdown">
+                                       <a href="about-us.html">About Us</a> 
+                                    </li>
+                                    <li class="has-dropdown">
+                                       <a href="#">Portfolio</a>
+                                       <div class="tp-submenu submenu tp-mega-menu">
+                                          <div class="tp-menu-fullwidth">
+                                             <div class="tp-megamenu-portfolio p-relative">
+                                                <div class="tp-megamenu-portfolio-banner">
+                                                   <img src="assets/img/menu/portfolio-menu/portfolio.png" alt="">
+                                                </div>
+                                                <div class="row gx-50">
+                                                   <div class="col-xxl-8 col-xl-10">
+                                                      <div class="tp-megamenu-list-box">
+                                                         <div class="row gx-50">
+                                                            <div class="col-xxl-6 col-xl-6">
+                                                               <div class="tp-megamenu-list">
+                                                                  <h4 class="tp-megamenu-title">PORTFOLIO LIST</h4>
+                                                                  <div class="tp-megamenu-list-wrap">
+                                                                     <ul>
+                                                                        <li><a href="portfolio-standard.html">Standerd</a></li>
+                                                                        <li><a href="index-10.html">Interactive</a></li>
+                                                                        <li><a href="portfolio-random.html">random</a></li>
+                                                                        <li><a href="portfolio-showcase-2.html">showcase parallax</a></li>
+                                                                        <li><a href="portfolio-masonary.html">Masonry random</a></li>
+                                                                        <li><a href="index-12.html">Vertical Carousel</a></li>
+                                                                        <li><a href="portfolio-wrapper.html">wrapper</a></li>
+                                                                        <li><a href="portfolio-showcase-1.html">horizontal</a></li>
+                                                                        <li><a href="index-7.html">Image Slider</a></li>
+                                                                        <li><a href="index-11.html">wrapper Slider</a></li>
+                                                                        <li><a href="portfolio-showcase-1.html">parallax showcase</a></li>
+                                                                     <li><a href="index-9.html">Perspective Slider</a></li>
+                                                                     </ul>
+                                                                  </div>
+                                                               </div>
+                                                            </div>
+                                                            <div class="col-xxl-3 col-xl-3">
+                                                               <div class="tp-megamenu-list tp-megamenu-list-2">
+                                                                  <h4 class="tp-megamenu-title">List Layouts</h4>
+                                                                  <div class="tp-megamenu-list-wrap">
+                                                                     <ul>
+                                                                        <li><a href="portfolio-grid-col-2.html">two-columns</a></li>
+                                                                        <li><a href="portfolio-grid-col-3.html">three-columns</a></li>
+                                                                        <li><a href="portfolio-grid-col-3-fullwidth.html">three-columns Wide</a></li>
+                                                                        <li><a href="portfolio-grid-col-4.html">four-columns</a></li>
+                                                                        <li><a href="portfolio-grid-col-4-fullwidth.html">four-columns Wide</a></li>
+                                                                     </ul>
+                                                                  </div>
+                                                               </div>
+                                                            </div>
+                                                            <div class="col-xxl-3 col-xl-3">
+                                                               <div class="tp-megamenu-list tp-megamenu-list-2 pl-20">
+                                                                  <h4 class="tp-megamenu-title">PORTFOLIO SINGLES</h4>
+                                                                  <div class="tp-megamenu-list-wrap">
+                                                                     <ul>
+                                                                        <li><a href="portfolio-showcase-2-details.html">Creative</a></li>
+                                                                        <li><a href="portfolio-details-1.html">images Small</a></li>
+                                                                        <li><a href="portfolio-details-2.html">Sliding</a></li>
+                                                                        <li><a href="portfolio-details-comparison.html">Image Comparison</a></li>
+                                                                        <li><a href="portfolio-details-video.html">Video</a></li>
+                                                                        <li><a href="portfolio-custom-light.html">CUSTOM LIGHT</a></li>
+                                                                        <li><a href="portfolio-showcase-details.html">Gallery</a></li>
+                                                                        <li><a href="portfolio-details-3.html">Mockups</a></li>
+                                                                     </ul>
+                                                                  </div>
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col-xxl-4 col-xl-3 d-none d-xxl-block">
+                                                      <div class="tp-megamenu-portfolio-text">
+                                                         <h4>60+</h4>
+                                                         <span>Pre-built demo home page</span>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </li>
+                                    <li class="has-dropdown">
+                                       <a href="#">
+                                          Pages
+                                          <span>
+                                             <svg width="8" height="5" viewBox="0 0 8 5" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 1L4 4L7 1" stroke="white" stroke-width="1.5"
+                                                   stroke-linecap="round" stroke-linejoin="round" />
+                                             </svg>
+                                          </span>
+                                       </a>
+                                       <div class="tp-submenu submenu tp-mega-menu">
+                                          <div class="tp-megamenu-wrapper">
+                                             <div class="row gx-50">
+                                                <div class="col-xl-8">
+                                                   <div class="tp-megamenu-list-box">
+                                                      <div class="row gx-50">
+                                                         <div class="col-xl-8">
+                                                            <div class="tp-megamenu-list">
+                                                               <h4 class="tp-megamenu-title">LIST  TYPES</h4>
+                                                               <div class="tp-megamenu-list-wrap">
+                                                                  <ul>
+                                                                     <li><a href="about-us.html">ABOUT US</a></li>
+                                                                     <li><a href="faq.html">FAQ Page</a></li>
+                                                                     <li><a href="about-me.html">ABOUT ME</a></li>
+                                                                     <li><a href="price.html">Pricing</a></li>
+                                                                     <li><a href="team.html">Team Page</a></li>
+                                                                     <li><a href="login.html">LogIn</a></li>
+                                                                     <li><a href="team-details.html">Team Datails</a></li>
+                                                                     <li><a href="register.html">Register</a></li>
+                                                                     <li><a href="service.html">OUR SERVICES</a></li>
+                                                                     <li><a href="#">404 ERROR PAGE</a></li>
+                                                                     <li><a href="brand.html">OUR CLIENTS</a></li>
+                                                                  </ul>
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                         <div class="col-xl-4">
+                                                            <div class="tp-megamenu-list tp-megamenu-list-2">
+                                                               <h4 class="tp-megamenu-title">Shop Page</h4>
+                                                               <div class="tp-megamenu-list-wrap">
+                                                                  <ul>
+                                                                     <li><a href="index-shop.html">Shop Page</a></li>
+                                                                     <li><a href="shop-details.html">shop details</a></li>
+                                                                     <li><a href="myaccount.html">my account</a></li>
+                                                                     <li><a href="cart.html">cart</a></li>
+                                                                     <li><a href="checkout.html">Checkout</a></li>
+                                                                     <li><a href="wishlist.html">Wishlist</a></li>
+                                                                  </ul>
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                   <div class="tp-megamenu-shop-style">
+                                                      <div class="tp-shop-banner-left p-relative">
+                                                         <div class="tp-shop-banner-thumb">
+                                                            <img src="assets/img/menu/shop-menu/banner-1.jpg" alt="">
+                                                         </div>
+                                                         <div class="tp-shop-banner-content">
+                                                            <h4 class="tp-shop-banner-title">Sale</h4>
+                                                            <span>20% Off all Shoes</span>
+                                                            <a class="tp-shop-btn" href="shop-details.html">Shop Now</a>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </li>
+                                 </ul>
+                              </nav>
+                           </div>
+                  </div>
                   <div class="col-xl-3 col-lg-6 col-md-6 col-6">
                      <div class="tp-header-3-right d-flex align-items-center justify-content-end">
+                        <div class="tp-header-3-social d-none d-sm-block">
+                           <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                           <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                           <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
                         <button class="tp-header-3-bar tp-offcanvas-open-btn d-xl-none"><i class="fa-solid fa-bars"></i></button>
                      </div>
                   </div>
@@ -224,12 +566,11 @@
                               <span></span>
                            </div>
                            <h4 class="tp-hero-3-title tp_reveal_anim">
-                              <span class="tp-reveal-line">A visual architect</span>
-                              <span class="tp-reveal-line">shaped by meaning</span>
+                              <span class="tp-reveal-line">We're a high-end</span>
+                              <span class="tp-reveal-line">digital agency</span>
                            </h4>
-                           <span class="tp-hero-3-category tp_reveal_anim">Designing identities, posters, and digital experiences that live at the intersection of clarity, and emotion.
-                           </span>
-                           <a class="tp-btn-black-2" href="contact-2.html">
+                           <span class="tp-hero-3-category tp_reveal_anim">ux/ui design / motion design / branding / development</span>
+                           <a class="tp-btn-black-2" href="contact.html">
                               Say Hello
                               <span class="p-relative">
                                  <svg class="svg-icon" width="10" height="10" viewBox="0 0 10 10" fill="none"
