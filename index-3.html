@@ -54,32 +54,53 @@
 
    <!-- header area start -->
    <header class="tp-header-height">
-      <div id="header-sticky" class="tp-header-3-area mt-35 z-index-5">
-         <div class="container container-1740">
+      <!-- header top area start -->
+      <div id="header-sticky" class="tp-header-area tp-header-mob-space tp-transparent pl-60 pr-60 z-index-9" aria-label="Navigation container">
+         <div class="container" role="navigation" aria-label="Main navigation">
             <div class="row align-items-center">
-               <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-                  <div class="tp-header-logo tp-header-3-logo">
-                     <a class="logo-1" href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                     <a class="logo-2" href="index.html"><img src="assets/img/logo/logo-white.png" alt=""></a>
+               <div class="col-xl-2 col-lg-2 col-6">
+                  <div class="tp-header-logo" aria-label="Logo section">
+                     <a class="logo-1" href="index.html"><img src="assets/img/logo/logo.png" alt="Main logo" aria-hidden="true"></a>
+                     <a class="logo-2" href="index.html"><img src="assets/img/logo/logo-white.png" alt="White logo" aria-hidden="true"></a>
                   </div>
                </div>
-               <div class="col-xl-6 col-lg-6 d-none d-xl-block">
+               <div class="col-xl-8 col-lg-9 d-none d-xl-block">
                   <div class="tp-header-menu header-main-menu text-center">
+                     <nav class="tp-main-menu-content">
+                        <ul>
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="about-me.html">About Me</a></li>
+                           <li><a href="about-me.html">Services</a></li>                           
+                           <li class="has-dropdown">
+                              <a href="blog-list.html">Portfolio</a>
+                              <ul class="tp-submenu submenu">
+                                 <li><a href="blog-modern.html">Posters</a></li>
+                                 <li><a href="blog-classic.html">Products</a></li>
+                                 <li><a href="blog-list.html">Logos</a></li>
+                                 <li><a href="blog-details.html">Graphics</a></li>
+                                 <li><a href="blog-details.html">Branding</a></li>
+                                 <li><a href="blog-details-without-sidebar.html">UX/UI</a></li>
+                              </ul>
+                           </li>
+                           <li><a href="blog-modern.html">Blog</a>
+                           <li><a href="contact-2.html">Contact</a></li>
+                           <li><a href="https://drive.google.com/file/d/1YPDsEdcel0mPjrtLRmGvpnflmzpA_upN/view?usp=sharing">Resume</a></li>
+                        </ul>
+                     </nav>
                   </div>
                </div>
-               <div class="col-xl-3 col-lg-6 col-md-6 col-6">
-                  <div class="tp-header-3-right d-flex align-items-center justify-content-end">
-                     <div class="tp-header-3-social d-none d-sm-block">
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                     </div>
-                     <button class="tp-header-3-bar tp-offcanvas-open-btn d-xl-none"><i class="fa-solid fa-bars"></i></button>
+               <div class="col-xl-2 col-lg col-6">
+                  <div class="tp-header-bar text-end">
+                     <button class="tp-offcanvas-open-btn">
+                        <span></span>
+                        <span></span>
+                     </button>
                   </div>
                </div>
             </div>
          </div>
       </div>
+      <!-- header top area end -->
    </header>
    <!-- header area end -->
    </div>
