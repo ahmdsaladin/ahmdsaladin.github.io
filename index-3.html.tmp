@@ -1,0 +1,134 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Ahmd Saladin - Design Manager</title>
+   <meta name="description" content="Design Manager Portfolio - Ahmd Saladin">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="assets/css/bootstrap.css">
+   <link rel="stylesheet" href="assets/css/animate.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/custom-animation.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body id="body" class="tp-smooth-scroll">
+   <!-- pre loader area start -->
+   <div id="loading" class="preloader-wrap">
+      <div class="preloader-2 text-center">
+         <span class="line line-1"></span>
+         <span class="line line-2"></span>
+         <span class="line line-3"></span>
+         <span class="line line-4"></span>
+         <span class="line line-5"></span>
+         <span class="line line-6"></span>
+         <span class="line line-7"></span>
+         <span class="line line-8"></span>
+         <span class="line line-9"></span>
+         <div class="loader-text">Loading ...</div>
+      </div>
+   </div>
+   <!-- pre loader area end -->
+
+   <!-- back to top start -->
+   <div class="back-to-top-wrapper">
+      <button id="back_to_top" type="button" class="back-to-top-btn">
+         <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+               stroke-linejoin="round" />
+         </svg>
+      </button>
+   </div>
+   <!-- back to top end -->
+
+   <!-- header area start -->
+   <header>
+      <div id="header-sticky" class="tp-header-3-area mt-35 z-index-5">
+         <span class="menu-bg"></span>
+         <div class="container container-1740">
+            <div class="row align-items-center">
+               <div class="col-xl-3 col-lg-6 col-md-6 col-6">
+                  <div class="tp-header-logo tp-header-3-logo">
+                     <a class="logo-1" href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                     <a class="logo-2" href="index.html"><img src="assets/img/logo/logo-white.png" alt=""></a>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6 d-none d-xl-block">
+                  <div class="tp-header-3-menu-wrap text-center">
+                     <div class="tp-header-3-menu-box d-inline-flex align-items-center justify-content-between">
+                        <div class="tp-header-3-menu header-main-menu">
+                           <nav class="tp-main-menu-content">
+                              <ul>
+                                 <li>
+                                    <a href="index.html">Home</a>
+                                 </li>
+                                 <li>
+                                    <a href="about-me.html">About Me</a>
+                                 </li>
+                                 <li>
+                                    <a href="services.html">Services</a>
+                                 </li>
+                                 <li class="has-dropdown">
+                                    <a href="#">Portfolio
+                                       <span>
+                                          <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M1 1L4 4L7 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                          </svg>
+                                       </span>
+                                    </a>
+                                    <ul class="tp-submenu submenu">
+                                       <li><a href="portfolio-posters.html">Posters</a></li>
+                                       <li><a href="portfolio-products.html">Products</a></li>
+                                       <li><a href="portfolio-logos.html">Logos</a></li>
+                                       <li><a href="portfolio-graphics.html">Graphics</a></li>
+                                       <li><a href="portfolio-branding.html">Branding</a></li>
+                                       <li><a href="portfolio-uxui.html">UX/UI</a></li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <a href="blog.html">Blog</a>
+                                 </li>
+                                 <li>
+                                    <a href="contact.html">Contact</a>
+                                 </li>
+                                 <li>
+                                    <a href="https://drive.google.com/file/d/1YPDsEdcel0mPjrtLRmGvpnflmzpA_upN/view?usp=sharing" target="_blank">Resume</a>
+                                 </li>
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-6 col-md-6 col-6">
+                  <div class="tp-header-3-right d-flex align-items-center justify-content-end">
+                     <div class="tp-header-3-social d-none d-sm-block">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                     </div>
+                     <button class="tp-header-3-bar tp-offcanvas-open-btn d-xl-none"><i class="fa-solid fa-bars"></i></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <!-- header area end -->
+
+   <!-- Rest of your original content... -->
+
+   <!-- Your existing scripts... -->
+</body>
+</html>
