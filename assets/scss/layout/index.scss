@@ -1,5 +1,2 @@
-@forward './header';
-@forward './menu';
-@forward './blog';
-@forward './footer';
-@forward './pages';
+// ... existing imports ...
+@import 'components/_fluid-glass';
