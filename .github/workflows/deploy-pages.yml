@@ -51,3 +51,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+      - name: Get workflow logs
+        if: failure()
+        run: |
+          gh run view ${{ github.run_id }} --log
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
