@@ -54,6 +54,7 @@ jobs:
       - name: Get workflow logs
         if: failure()
         run: |
+          gh --version
           gh run view ${{ github.run_id }} --log
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
