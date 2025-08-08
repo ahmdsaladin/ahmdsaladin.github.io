@@ -35,6 +35,8 @@ jobs:
         with:
           node-version: '19.9.0'
           cache: 'npm'
+      - name: List files
+        run: ls -laR
       - name: Install dependencies
         run: npm install
       - name: Build
